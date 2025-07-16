@@ -1,0 +1,137 @@
+1. **Scenario:** A major Australian bank reports that in 2019, it earned $500 million in net interest income by lending at 5% interest on $10 billion in loans while paying 2% interest on $8 billion in retail deposits. The bank’s earning assets total $12 billion. The bank’s CFO highlights the net interest margin as a key performance indicator.
+
+**Question:** Based on the document, how is the net interest margin calculated, and what is its value in this scenario?
+
+A) Net interest income divided by total deposits; 6.25%.  
+B) Net interest income divided by earning assets; 4.17%.  
+C) Total revenue minus operating expenses; 3.33%.  
+D) Interest earned minus interest paid; 5.00%.  
+
+**Correct Answer:** B) Net interest income divided by earning assets; 4.17%.  
+**Explanation:** The document states that net interest margin is calculated by dividing net interest income by the bank’s earning assets (Page 3). Here, net interest income is $500 million, and earning assets are $12 billion, so $500 million / $12 billion = 0.0417 or 4.17%.
+
+---
+
+2. **Scenario:** A regional bank in Australia is facing increased scrutiny from the Australian Prudential Regulation Authority (APRA) due to concerns about its liquidity. The bank holds $200 million in cash and government securities but faces $250 million in projected 30-day net cash outflows under a stress scenario. APRA requires compliance with Basel III liquidity reforms.
+
+**Question:** According to the document, which Basel III requirement is the bank likely failing to meet, and what does it mandate?
+
+A) Net Stable Funding Ratio (NSFR); funding assets with stable funding over one year.  
+B) Liquidity Coverage Ratio (LCR); holding sufficient liquid assets for 30-day outflows.  
+C) Risk Weighted Assets (RWA); maintaining minimum capital for insolvency risk.  
+D) Credit Risk Estimates (CRE); estimating long-run probability of default.  
+
+**Correct Answer:** B) Liquidity Coverage Ratio (LCR); holding sufficient liquid assets for 30-day outflows.  
+**Explanation:** The document explains that the LCR requires Australian ADIs to hold sufficient liquid assets to meet 30-day net cash outflows under an APRA-prescribed stress scenario (Page 6). The bank’s $200 million in liquid assets is insufficient for $250 million in outflows, indicating non-compliance with LCR.
+
+---
+
+3. **Scenario:** A bank’s annual report shows that its fee income from households dropped by 7% in 2019, with credit card fees being the largest contributor. The bank’s management is considering increasing fees for deposit accounts to offset this decline, but they are concerned about customer backlash and regulatory oversight.
+
+**Question:** Based on the document, what trend in household fee income does this scenario reflect, and what is a likely reason for the bank’s concern?
+
+A) Modest growth in fee income; risk of liquidity issues.  
+B) Decline in fee income; regulatory restrictions on fee increases.  
+C) Increase in credit card fees; competition from wholesale funding.  
+D) Stable fee income; impact on net interest margin.  
+
+**Correct Answer:** B) Decline in fee income; regulatory restrictions on fee increases.  
+**Explanation:** The document notes a 7% decline in household fee income in 2019, with credit cards as the largest component (Page 3). The bank’s concern about regulatory oversight aligns with APRA’s role in ensuring financial stability, which may limit fee increases (Page 6).
+
+---
+
+4. **Scenario:** A bank sources 60% of its funding from retail deposits ($600 million) and 40% from wholesale funding ($400 million), as reported in July 2019. The cost of retail deposits is influenced by the Reserve Bank of Australia’s (RBA) cash rate, while wholesale funding costs are rising due to global economic uncertainty. The bank’s CFO is concerned about the overall cost of funds.
+
+**Question:** According to the document, what primarily determines the bank’s cost of funds, and how does this scenario reflect that?
+
+A) Net interest margin; influenced by loan repayment rates.  
+B) Source and cost of raising funds; retail deposits dominate funding.  
+C) Capital adequacy requirements; wholesale funding is more stable.  
+D) Fee income; global economic factors are irrelevant.  
+
+**Correct Answer:** B) Source and cost of raising funds; retail deposits dominate funding.  
+**Explanation:** The document states that the cost of funds is a function of the source of funding and the costs of raising it, with retail deposits (62%) and wholesale funding (38%) as primary sources in July 2019 (Page 3). The scenario reflects this, with retail deposits at 60% and rising wholesale costs due to global factors.
+
+---
+
+5. **Scenario:** During an economic downturn, a bank experiences a rise in borrower defaults on home loans, increasing its credit risk. The bank’s risk management team reviews its loan portfolio to assess the probability of further losses and adjusts its capital reserves to comply with APRA regulations.
+
+**Question:** Based on the document, what type of risk is the bank addressing, and what regulatory body oversees its capital adequacy?
+
+A) Liquidity risk; Reserve Bank of Australia (RBA).  
+B) Credit risk; Australian Prudential Regulation Authority (APRA).  
+C) Interest rate risk; Basel Committee on Banking Supervision (BCBS).  
+D) Solvency risk; Australian Banking Association (ABA).  
+
+**Correct Answer:** B) Credit risk; Australian Prudential Regulation Authority (APRA).  
+**Explanation:** The document defines credit risk as the probability of loss due to a borrower’s failure to make payments (Page 4) and states that APRA enforces capital adequacy rules to ensure banks meet financial obligations (Page 6).
+
+---
+
+6. **Scenario:** A bank’s balance sheet shows $5 billion in home loans, $2 billion in business loans, and $1 billion in cash as interest-earning assets. Its liabilities include $6 billion in savings deposits and $1.5 billion in debt issues. The bank’s management is concerned about liquidity if depositors demand withdrawals during a market crisis.
+
+**Question:** According to the document, what does liquidity refer to in this context, and why is it critical for the bank?
+
+A) Ability to generate profits; ensures high net interest margins.  
+B) Ability to meet expenses with liquid assets; prevents inability to repay depositors.  
+C) Ability to issue new shares; supports capital adequacy.  
+D) Ability to manage long-term loans; reduces credit risk.  
+
+**Correct Answer:** B) Ability to meet expenses with liquid assets; prevents inability to repay depositors.  
+**Explanation:** The document defines liquidity as a bank’s ability to meet expenses, such as repaying depositors, using liquid assets like cash (Page 5). This is critical to avoid liquidity problems during a crisis, as seen in the scenario.
+
+---
+
+7. **Scenario:** A bank’s income statement reports $300 million in net interest income, $100 million in fees and commissions, and $50 million in funds management income. Its operating expenses, including salaries and technology, total $200 million, and loan impairment expenses are $30 million. The bank’s CFO uses profitability ratios to assess performance.
+
+**Question:** Based on the document, which profitability ratio would the CFO likely use to evaluate earnings relative to assets, and what components contribute to the bank’s revenue?
+
+A) Return on Equity (ROE); net interest income, fees, and insurance income.  
+B) Return on Assets (ROA); net interest income, fees, and funds management income.  
+C) Net Interest Margin; operating expenses and loan impairment expenses.  
+D) Profit Margin; debt issues and retained earnings.  
+
+**Correct Answer:** B) Return on Assets (ROA); net interest income, fees, and funds management income.  
+**Explanation:** The document lists ROA as a profitability ratio evaluating earnings relative to assets (Page 5) and identifies revenue sources as net interest income, fees/commissions, and funds management income (Page 6), all present in the scenario.
+
+---
+
+8. **Scenario:** A bank is preparing for an APRA audit to ensure compliance with Basel III liquidity reforms. It holds $500 million in High Quality Liquid Assets (HQLA), including government securities, to meet a projected $450 million in net cash outflows over 30 days. The bank also maintains stable funding to comply with a one-year horizon requirement.
+
+**Question:** According to the document, which Basel III requirements is the bank addressing, and what assets qualify as HQLA?
+
+A) LCR and NSFR; cash, government, and semi-government securities.  
+B) RWA and CRE; savings and investment deposits.  
+C) Tier 1 and Tier 2 capital; home and business loans.  
+D) ROA and ROE; debt issues and equity.  
+
+**Correct Answer:** A) LCR and NSFR; cash, government, and semi-government securities.  
+**Explanation:** The document states that the LCR requires sufficient liquid assets for 30-day outflows and the NSFR ensures stable funding over one year, with HQLA including cash, government, and semi-government securities (Page 6).
+
+---
+
+9. **Scenario:** A bank’s risk management team is concerned about interest rate risk due to recent fluctuations in the RBA’s cash rate. The bank holds $2 billion in long-term loans with fixed interest rates, which may lose value if market rates rise. The team adjusts its portfolio to mitigate potential losses.
+
+**Question:** Based on the document, what is interest rate risk, and how does it impact the bank in this scenario?
+
+A) Risk of borrower default; reduces loan repayment rates.  
+B) Risk of adverse interest rate movements; affects investment value.  
+C) Risk of insufficient liquid assets; limits depositor withdrawals.  
+D) Risk of insolvency; impacts capital adequacy requirements.  
+
+**Correct Answer:** B) Risk of adverse interest rate movements; affects investment value.  
+**Explanation:** The document defines interest rate risk as the risk that movement in interest rates adversely affects the value of investments (Page 4), directly relevant to the scenario’s fixed-rate loans losing value due to rising market rates.
+
+---
+
+10. **Scenario:** A bank’s annual report shows $1 billion in Tier 1 capital (ordinary shares and retained earnings) and $500 million in Tier 2 capital (subordinated debt). APRA requires the bank to maintain sufficient capital to protect depositors in case of losses. The bank’s management emphasizes capital adequacy to ensure solvency.
+
+**Question:** According to the document, what is the purpose of Tier 1 and Tier 2 capital, and how does it support the bank’s solvency?
+
+A) To fund daily operations; ensures liquidity for expenses.  
+B) To withstand losses; protects depositors and ensures solvency.  
+C) To increase fee income; supports profitability ratios.  
+D) To manage wholesale funding; reduces cost of funds.  
+
+**Correct Answer:** B) To withstand losses; protects depositors and ensures solvency.  
+**Explanation:** The document states that a bank’s capital (Tier 1 and Tier 2) represents its ability to withstand losses without becoming insolvent, with Tier 1 including shares and retained earnings and Tier 2 providing additional loss protection for depositors (Page 6).
