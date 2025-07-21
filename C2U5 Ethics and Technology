@@ -1,0 +1,119 @@
+## Question 1: Moral Responsibility in Algorithmic Decisions
+In the context of banking, who bears the moral responsibility for decisions made by machine learning algorithms?
+
+- **A.** The algorithm itself
+- **B.** The customers affected by the decisions
+- **C.** The human designers and implementers of the algorithm
+- **D.** The regulatory bodies overseeing the bank
+
+**Answer:** **C. The human designers and implementers of the algorithm**
+
+**Explanation:** Machines, including algorithms, are not moral agents because they lack the ability to discern right from wrong or bear responsibility for their actions. Instead, moral responsibility lies with the human agents who design, implement, and oversee these systems. This ensures that humans are accountable for ensuring that the systems do not cause harm.
+
+## Question 2: Machine Learning vs. Traditional Algorithms
+What distinguishes machine learning algorithms from traditional algorithms in banking?
+
+- **A.** Machine learning algorithms are rule-based, while traditional algorithms learn from data.
+- **B.** Machine learning algorithms can independently analyze data, while traditional algorithms require predefined rules.
+- **C.** Traditional algorithms are faster than machine learning algorithms.
+- **D.** Machine learning algorithms are only used for customer support, while traditional algorithms are used for risk assessment.
+
+**Answer:** **B. Machine learning algorithms can independently analyze data, while traditional algorithms require predefined rules.**
+
+**Explanation:** Machine learning algorithms are a form of "weak artificial intelligence" that can independently "learn" to analyze data and make decisions based on patterns, whereas traditional algorithms rely on predefined rules and do not have the ability to learn or adapt independently.
+
+## Question 3: Algorithmic Bias
+Why can algorithms perpetuate societal biases in banking?
+
+- **A.** Because they are designed to be unbiased
+- **B.** Because they reflect the biases present in the data used to build them
+- **C.** Because they are inherently flawed
+- **D.** Because they are not transparent
+
+**Answer:** **B. Because they reflect the biases present in the data used to build them**
+
+**Explanation:** Algorithms are only as good as the data they are trained on. If the data contains societal biases, the algorithm can perpetuate those biases, even if it appears objective. This can lead to unfair outcomes, as highlighted in discussions about algorithms codifying societal biases.
+
+## Question 4: Ethical Use of Big Data
+What is the primary ethical consideration when using big data in banking?
+
+- **A.** Ensuring data accuracy
+- **B.** Protecting customer privacy and obtaining consent
+- **C.** Maximizing profit through data analysis
+- **D.** Complying with international data standards
+
+**Answer:** **B. Protecting customer privacy and obtaining consent**
+
+**Explanation:** The ethical use of big data in banking must prioritize customer privacy and ensure that personal data is handled in accordance with principles like the Australian Privacy Principles (APPs). This includes obtaining informed consent and safeguarding data to prevent misuse or harm.
+
+## Question 5: Negative Impacts of AI
+What is a potential negative impact of implementing AI in banking?
+
+- **A.** Increased operational efficiency
+- **B.** Enhanced customer experience
+- **C.** Introduction of new ethical challenges
+- **D.** Reduction in staffing costs
+
+**Answer:** **C. Introduction of new ethical challenges**
+
+**Explanation:** While AI can bring benefits such as improved efficiency and customer experience, it also introduces new ethical challenges, such as issues related to bias, privacy, and accountability. These challenges must be carefully managed to ensure ethical banking practices.
+
+## Question 6: Importance of Non-Moral Agency
+Why is it important to understand that machines are not moral agents?
+
+- **A.** Because it shifts the blame to humans
+- **B.** Because it highlights the need for human oversight in AI systems
+- **C.** Because it simplifies the decision-making process
+- **D.** Because it reduces the cost of implementing AI
+
+**Answer:** **B. Because it highlights the need for human oversight in AI systems**
+
+**Explanation:** Since machines cannot bear moral responsibility, humans must ensure that AI systems are designed and implemented in a way that does not cause harm. This underscores the necessity of human oversight to monitor and correct potential ethical issues in AI systems.
+
+## Question 7: Challenges of Algorithmic Bias
+What makes algorithmic biases particularly challenging to address in banking?
+
+- **A.** They are always intentional
+- **B.** They can appear objective and are hard to detect
+- **C.** They are less harmful than human biases
+- **D.** They are easy to correct with more data
+
+**Answer:** **B. They can appear objective and are hard to detect**
+
+**Explanation:** Algorithms can codify societal biases in a way that makes them seem objective, which masks their lack of transparency. This makes it difficult to detect and address biases, as they may not be immediately apparent and can complicate accountability and appeal processes.
+
+## Question 8: Applications of Algorithms
+Which of the following is NOT a typical application of algorithms in banking?
+
+- **A.** Customer decision support
+- **B.** Chatbot interactions
+- **C.** Manual transaction processing
+- **D.** Risk assessment
+
+**Answer:** **C. Manual transaction processing**
+
+**Explanation:** Algorithms are used to automate various banking processes, such as customer decision support, chatbot interactions, and risk assessment. Manual transaction processing, however, is not typically automated by algorithms, as it often requires human intervention.
+
+## Question 9: Weak Artificial Intelligence
+In the context of banking, what does "weak artificial intelligence" refer to?
+
+- **A.** AI systems that are not very intelligent
+- **B.** AI systems that can perform specific tasks without true understanding
+- **C.** AI systems that are emotionally intelligent
+- **D.** AI systems that can make moral decisions
+
+**Answer:** **B. AI systems that can perform specific tasks without true understanding**
+
+**Explanation:** Machine learning algorithms are described as "weak artificial intelligence" because they can perform specific tasks, such as analyzing data or making decisions, but lack true intelligence or self-awareness. They operate based on patterns in data rather than understanding or consciousness.
+
+## Question 10: Importance of Transparency
+Why is transparency important in algorithmic decision-making in banking?
+
+- **A.** To increase customer satisfaction
+- **B.** To allow for accountability and appeal processes
+- **C.** To reduce the cost of implementing algorithms
+- **D.** To comply with international standards
+
+**Answer:** **B. To allow for accountability and appeal processes**
+
+**Explanation:** Transparency in algorithmic decision-making is crucial because it enables stakeholders to understand how decisions are made. This is particularly important for accountability, as it allows for the detection of biases or errors and provides a basis for appealing decisions that may be unfair or incorrect.
