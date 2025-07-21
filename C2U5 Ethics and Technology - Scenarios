@@ -1,5 +1,8 @@
 ## Question 1
-A bank has implemented a new machine learning algorithm to assess loan applications. The algorithm has been trained on historical data from the past 10 years. Recently, it was discovered that the algorithm is denying loans to a higher percentage of applicants from a particular demographic group compared to others. What is the most likely cause of this issue?
+A bank has implemented a new machine learning algorithm to assess loan applications. The algorithm has been trained 
+on historical data from the past 10 years. Recently, it was discovered that the algorithm is denying loans to a higher 
+percentage of applicants from a particular demographic group compared to others. What is the most likely cause of this 
+issue?
 
 **A.** The algorithm is biased due to the historical data it was trained on.  
 **B.** The machine learning algorithm is inherently discriminatory.  
@@ -8,7 +11,11 @@ A bank has implemented a new machine learning algorithm to assess loan applicati
 
 **Answer:** **A. The algorithm is biased due to the historical data it was trained on.**
 
-**Explanation:** Historical data often reflects past biases and inequalities. If the data used to train the algorithm contains biases, the algorithm will learn and perpetuate those biases. In this case, the higher denial rate for a particular demographic group is likely due to biased historical data rather than the algorithm being inherently discriminatory or other factors. This highlights the importance of ensuring that training data is diverse and free from bias to prevent discriminatory outcomes.
+**Explanation:** Historical data often reflects past biases and inequalities. If the data used to train the algorithm 
+contains biases, the algorithm will learn and perpetuate those biases. In this case, the higher denial rate for a 
+particular demographic group is likely due to biased historical data rather than the algorithm being inherently discriminatory 
+or other factors. This highlights the importance of ensuring that training data is diverse and free from bias to prevent 
+discriminatory outcomes.
 
 ---
 
@@ -22,12 +29,18 @@ In the context of banking, who is considered a moral agent when it comes to deci
 
 **Answer:** **C. The human designers and overseers of the algorithm**
 
-**Explanation:** Moral agents are entities capable of discerning right from wrong and can be held accountable for their actions. Algorithms are not moral agents; they are tools created and managed by humans. Therefore, the responsibility for the decisions made by algorithms falls on the human designers, implementers, and overseers who have the capability to understand and control the algorithm's behavior. This underscores the ethical responsibility of humans in the banking sector to ensure fair and ethical use of technology.
+**Explanation:** Moral agents are entities capable of discerning right from wrong and can be held accountable for 
+their actions. Algorithms are not moral agents; they are tools created and managed by humans. Therefore, the 
+responsibility for the decisions made by algorithms falls on the human designers, implementers, and overseers who have 
+the capability to understand and control the algorithm's behavior. This underscores the ethical responsibility of 
+humans in the banking sector to ensure fair and ethical use of technology.
 
 ---
 
 ## Question 3
-A bank is considering using big data analytics to personalize its services. However, it is concerned about complying with the Australian Privacy Principles (APPs). Which of the following is a key requirement under the APPs that the bank must adhere to?
+A bank is considering using big data analytics to personalize its services. However, it is concerned about complying 
+with the Australian Privacy Principles (APPs). Which of the following is a key requirement under the APPs that the 
+bank must adhere to?
 
 **A.** Ensuring that all data is stored within Australia  
 **B.** Obtaining informed consent from customers before collecting and using their personal information  
@@ -36,12 +49,18 @@ A bank is considering using big data analytics to personalize its services. Howe
 
 **Answer:** **B. Obtaining informed consent from customers before collecting and using their personal information**
 
-**Explanation:** The Australian Privacy Principles (APPs) require organizations to handle personal information in a way that respects the privacy of individuals. One of the key principles is that organizations must obtain an individual's consent before collecting, using, or disclosing their personal information. This ensures that customers are aware of and agree to how their data is being used, which is particularly important when using big data analytics for personalized services.
+**Explanation:** The Australian Privacy Principles (APPs) require organizations to handle personal information in a 
+way that respects the privacy of individuals. One of the key principles is that organizations must obtain an individual's 
+consent before collecting, using, or disclosing their personal information. This ensures that customers are aware of 
+and agree to how their data is being used, which is particularly important when using big data analytics for personalized 
+services.
 
 ---
 
 ## Question 4
-A bank has automated its credit scoring process using an algorithm. However, upon review, it is found that the algorithm is giving lower scores to applicants with certain surnames, which are more common in a particular cultural group. What ethical issue does this raise?
+A bank has automated its credit scoring process using an algorithm. However, upon review, it is found that the 
+algorithm is giving lower scores to applicants with certain surnames, which are more common in a particular cultural 
+group. What ethical issue does this raise?
 
 **A.** Lack of transparency in the algorithm's decision-making process  
 **B.** Perpetuation of bias through automation  
@@ -50,26 +69,37 @@ A bank has automated its credit scoring process using an algorithm. However, upo
 
 **Answer:** **B. Perpetuation of bias through automation**
 
-**Explanation:** The scenario describes a situation where the algorithm is exhibiting biased behavior by giving lower scores based on surnames, which are indicative of cultural backgrounds. This is an example of how algorithms can perpetuate existing biases if they are not properly designed or if the data they are trained on contains biases. This raises ethical concerns about fairness and discrimination in lending practices, which are critical issues in banking.
+**Explanation:** The scenario describes a situation where the algorithm is exhibiting biased behavior by giving lower 
+scores based on surnames, which are indicative of cultural backgrounds. This is an example of how algorithms can 
+perpetuate existing biases if they are not properly designed or if the data they are trained on contains biases. 
+This raises ethical concerns about fairness and discrimination in lending practices, which are critical issues in banking.
 
 ---
 
 ## Question 5
-In the context of machine learning in banking, what is a key difference between traditional algorithms and machine learning algorithms?
+In the context of machine learning in banking, what is a key difference between traditional algorithms and machine 
+learning algorithms?
 
-**A.** Traditional algorithms require human intervention for every decision, while machine learning algorithms operate autonomously.  
+**A.** Traditional algorithms require human intervention for every decision, while machine learning algorithms operate 
+autonomously.  
 **B.** Machine learning algorithms are programmed with fixed rules, whereas traditional algorithms learn from data.  
 **C.** Traditional algorithms are used for simple tasks, while machine learning algorithms handle complex tasks.  
-**D.** Machine learning algorithms can learn and improve from experience without being explicitly programmed, whereas traditional algorithms follow predefined rules.
+**D.** Machine learning algorithms can learn and improve from experience without being explicitly programmed, whereas 
+traditional algorithms follow predefined rules.
 
-**Answer:** **D. Machine learning algorithms can learn and improve from experience without being explicitly programmed, whereas traditional algorithms follow predefined rules.**
+**Answer:** **D. Machine learning algorithms can learn and improve from experience without being explicitly programmed, 
+whereas traditional algorithms follow predefined rules.**
 
-**Explanation:** Traditional algorithms are designed with specific rules and instructions to perform a task. In contrast, machine learning algorithms are designed to learn from data and improve their performance over time without being explicitly programmed for each decision. This ability to learn and adapt makes machine learning particularly powerful for handling complex and dynamic data in banking, but it also introduces ethical challenges such as bias and transparency.
+**Explanation:** Traditional algorithms are designed with specific rules and instructions to perform a task. In contrast, 
+machine learning algorithms are designed to learn from data and improve their performance over time without being 
+explicitly programmed for each decision. This ability to learn and adapt makes machine learning particularly powerful 
+for handling complex and dynamic data in banking, but it also introduces ethical challenges such as bias and transparency.
 
 ---
 
 ## Question 6
-A bank is using an algorithm to detect fraudulent transactions. The algorithm flags a high number of transactions from a particular geographic region as suspicious, leading to many false positives. What could be a reason for this?
+A bank is using an algorithm to detect fraudulent transactions. The algorithm flags a high number of transactions from 
+a particular geographic region as suspicious, leading to many false positives. What could be a reason for this?
 
 **A.** The algorithm is not trained on diverse enough data.  
 **B.** The region has a higher incidence of fraud.  
@@ -78,7 +108,11 @@ A bank is using an algorithm to detect fraudulent transactions. The algorithm fl
 
 **Answer:** **A. The algorithm is not trained on diverse enough data.**
 
-**Explanation:** If the algorithm is flagging a disproportionately high number of transactions from a particular region as suspicious, it may indicate that the training data used for the algorithm does not adequately represent the diversity of transaction patterns across different regions. This lack of diversity in training data can lead to biased outcomes, where the algorithm incorrectly identifies legitimate transactions from certain regions as fraudulent. This highlights the need for diverse and representative training data in banking algorithms.
+**Explanation:** If the algorithm is flagging a disproportionately high number of transactions from a particular region 
+as suspicious, it may indicate that the training data used for the algorithm does not adequately represent the diversity 
+of transaction patterns across different regions. This lack of diversity in training data can lead to biased outcomes, 
+where the algorithm incorrectly identifies legitimate transactions from certain regions as fraudulent. This highlights 
+the need for diverse and representative training data in banking algorithms.
 
 ---
 
@@ -92,12 +126,16 @@ Under what circumstances can a bank be held morally responsible for the actions 
 
 **Answer:** **B. When the algorithm's decisions are based on biased data provided by the bank.**
 
-**Explanation:** Moral responsibility in the context of algorithms lies with the humans who design, implement, and oversee them. If a bank provides biased data to train its algorithms, leading to discriminatory or unfair decisions, the bank can be held morally responsible because it has failed in its duty to ensure that its systems operate fairly and ethically. This emphasizes the importance of ethical oversight in banking technology.
+**Explanation:** Moral responsibility in the context of algorithms lies with the humans who design, implement, and 
+oversee them. If a bank provides biased data to train its algorithms, leading to discriminatory or unfair decisions, 
+the bank can be held morally responsible because it has failed in its duty to ensure that its systems operate fairly 
+and ethically. This emphasizes the importance of ethical oversight in banking technology.
 
 ---
 
 ## Question 8
-A bank is planning to implement a new customer service chatbot powered by artificial intelligence. What is a key ethical consideration the bank should address before deployment?
+A bank is planning to implement a new customer service chatbot powered by artificial intelligence. What is a key 
+ethical consideration the bank should address before deployment?
 
 **A.** Ensuring the chatbot can handle all customer inquiries without human intervention.  
 **B.** Making sure the chatbot's responses are always polite and friendly.  
@@ -106,7 +144,10 @@ A bank is planning to implement a new customer service chatbot powered by artifi
 
 **Answer:** **C. Verifying that the chatbot does not perpetuate biases present in its training data.**
 
-**Explanation:** One of the primary ethical concerns with AI-powered chatbots is the potential for bias in their responses, which can stem from biased training data. It is crucial for the bank to ensure that the chatbot is trained on diverse and unbiased data to prevent it from providing discriminatory or unfair service to customers. This is especially important in banking, where customer trust and fairness are paramount.
+**Explanation:** One of the primary ethical concerns with AI-powered chatbots is the potential for bias in their 
+responses, which can stem from biased training data. It is crucial for the bank to ensure that the chatbot is trained 
+on diverse and unbiased data to prevent it from providing discriminatory or unfair service to customers. This is 
+especially important in banking, where customer trust and fairness are paramount.
 
 ---
 
@@ -120,12 +161,17 @@ In the context of big data in banking, what is a potential ethical issue related
 
 **Answer:** **B. Collecting and analyzing customer data without their consent.**
 
-**Explanation:** A significant ethical issue in the use of big data is the collection and analysis of personal information without the informed consent of individuals. This practice can violate privacy rights and lead to misuse of personal data. Banks must ensure they obtain proper consent and adhere to privacy regulations, such as the Australian Privacy Principles (APPs), when handling customer data.
+**Explanation:** A significant ethical issue in the use of big data is the collection and analysis of personal 
+information without the informed consent of individuals. This practice can violate privacy rights and lead to misuse 
+of personal data. Banks must ensure they obtain proper consent and adhere to privacy regulations, such as the 
+Australian Privacy Principles (APPs), when handling customer data.
 
 ---
 
 ## Question 10
-A bank uses an algorithm to automate its hiring process for new employees. However, it is discovered that the algorithm is favoring candidates from certain educational institutions over others, even when qualifications are similar. What does this illustrate?
+A bank uses an algorithm to automate its hiring process for new employees. However, it is discovered that the algorithm 
+is favoring candidates from certain educational institutions over others, even when qualifications are similar. What 
+does this illustrate?
 
 **A.** The efficiency of automated hiring processes.  
 **B.** The potential for algorithms to introduce or perpetuate bias.  
@@ -134,4 +180,7 @@ A bank uses an algorithm to automate its hiring process for new employees. Howev
 
 **Answer:** **B. The potential for algorithms to introduce or perpetuate bias.**
 
-**Explanation:** This scenario illustrates how algorithms can introduce or perpetuate biases if they are not carefully designed and monitored. In this case, the algorithm may be biased towards candidates from certain educational institutions due to the data it was trained on, which could reflect historical hiring preferences or other biases. This highlights the importance of ensuring that algorithms used in hiring are fair and do not discriminate against qualified candidates.
+**Explanation:** This scenario illustrates how algorithms can introduce or perpetuate biases if they are not carefully 
+designed and monitored. In this case, the algorithm may be biased towards candidates from certain educational institutions 
+due to the data it was trained on, which could reflect historical hiring preferences or other biases. This highlights 
+the importance of ensuring that algorithms used in hiring are fair and do not discriminate against qualified candidates.
