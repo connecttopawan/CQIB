@@ -1,5 +1,8 @@
 ### Question 1: FATF and AML/CTF Compliance
-**Scenario:** An Australian bank plans to expand its operations by opening a branch in a Southeast Asian country recently placed on the FATF’s "grey list" due to strategic deficiencies in its anti-money laundering and counter-terrorism financing (AML/CTF) regime. The bank’s compliance team must determine the best course of action to mitigate risks.
+**Scenario:** An Australian bank plans to expand its operations by opening a branch in a Southeast Asian 
+country recently placed on the FATF’s "grey list" due to strategic deficiencies in its anti-money laundering 
+and counter-terrorism financing (AML/CTF) regime. The bank’s compliance team must determine the best course 
+of action to mitigate risks.
 
 **Options:**  
 A) Proceed with standard AML/CTF procedures as applied in Australia, assuming they suffice.  
@@ -9,12 +12,21 @@ D) Suspend the expansion until the country is removed from the FATF grey list.
 
 **Correct Answer:** B) Conduct enhanced due diligence on all transactions linked to the new branch.
 
-**Explanation:** The Financial Action Task Force (FATF) identifies jurisdictions with AML/CTF deficiencies, placing them on its grey list to signal increased risk. For an Australian bank expanding into such a jurisdiction, FATF recommendations (implemented in Australia via the AML/CTF Act overseen by AUSTRAC) require heightened scrutiny. Enhanced due diligence is necessary to address the elevated risk of money laundering and terrorism financing, beyond standard Australian procedures. Waiting for AUSTRAC instructions or suspending operations may delay business unnecessarily, while standard procedures alone are insufficient given the FATF designation.
+**Explanation:** The Financial Action Task Force (FATF) identifies jurisdictions with AML/CTF deficiencies, 
+placing them on its grey list to signal increased risk. For an Australian bank expanding into such a 
+jurisdiction, FATF recommendations (implemented in Australia via the AML/CTF Act overseen by AUSTRAC) 
+require heightened scrutiny. Enhanced due diligence is necessary to address the elevated risk of money 
+laundering and terrorism financing, beyond standard Australian procedures. Waiting for AUSTRAC instructions 
+or suspending operations may delay business unnecessarily, while standard procedures alone are insufficient 
+given the FATF designation.
 
 ---
 
 ### Question 2: Basel Committee and Capital Requirements
-**Scenario:** After a period of economic instability, the Basel Committee on Banking Supervision (BCBS) introduces Basel IV, raising the minimum Common Equity Tier 1 (CET1) capital ratio from 10.5% to 12%. An Australian bank currently maintains a CET1 ratio of 11%. The bank’s board must decide how to comply with the new standard.
+**Scenario:** After a period of economic instability, the Basel Committee on Banking Supervision (BCBS) 
+introduces Basel IV, raising the minimum Common Equity Tier 1 (CET1) capital ratio from 10.5% to 12%. An 
+Australian bank currently maintains a CET1 ratio of 11%. The bank’s board must decide how to comply with the 
+new standard.
 
 **Options:**  
 A) Maintain the current CET1 ratio, as it exceeds the Basel III minimum.  
@@ -24,12 +36,19 @@ D) Reduce total assets to artificially boost the CET1 ratio without raising capi
 
 **Correct Answer:** B) Increase CET1 capital to achieve the 12% ratio required by Basel IV.
 
-**Explanation:** The BCBS sets global capital standards through the Basel Accords, which the Australian Prudential Regulation Authority (APRA) adopts for Australian banks. If Basel IV increases the CET1 minimum to 12%, a bank with an 11% ratio must either raise additional equity capital or reduce risk-weighted assets (RWA) to comply. Since the scenario does not indicate RWA adjustments as feasible, increasing CET1 capital is the direct solution. Maintaining the current ratio violates the new standard, exemptions are unlikely for core requirements, and reducing total assets without addressing RWA is impractical.
+**Explanation:** The BCBS sets global capital standards through the Basel Accords, which the Australian Prudential 
+Regulation Authority (APRA) adopts for Australian banks. If Basel IV increases the CET1 minimum to 12%, a bank with 
+an 11% ratio must either raise additional equity capital or reduce risk-weighted assets (RWA) to comply. Since the 
+scenario does not indicate RWA adjustments as feasible, increasing CET1 capital is the direct solution. Maintaining 
+the current ratio violates the new standard, exemptions are unlikely for core requirements, and reducing total assets 
+without addressing RWA is impractical.
 
 ---
 
 ### Question 3: IOSCO and Derivatives Regulation
-**Scenario:** An Australian investment bank engages in cross-border derivatives trading. The International Organization of Securities Commissions (IOSCO) releases updated principles requiring stricter oversight of over-the-counter (OTC) derivatives. The bank’s compliance officer assesses the impact on operations.
+**Scenario:** An Australian investment bank engages in cross-border derivatives trading. The International Organization 
+of Securities Commissions (IOSCO) releases updated principles requiring stricter oversight of over-the-counter (OTC) 
+derivatives. The bank’s compliance officer assesses the impact on operations.
 
 **Options:**  
 A) Implement the IOSCO principles immediately to avoid international sanctions.  
@@ -39,12 +58,17 @@ D) Seek IOSCO certification to continue cross-border trading.
 
 **Correct Answer:** B) Monitor ASIC’s response and adjust practices as local regulations evolve.
 
-**Explanation:** IOSCO establishes global standards for securities markets, influencing national regulators like the Australian Securities and Investments Commission (ASIC). Its principles are not directly enforceable but guide ASIC’s regulatory framework. The bank should anticipate ASIC incorporating these principles into Australian law and adjust accordingly, rather than acting preemptively, ignoring them, or seeking irrelevant IOSCO certification (which does not exist for individual firms).
+**Explanation:** IOSCO establishes global standards for securities markets, influencing national regulators like the 
+Australian Securities and Investments Commission (ASIC). Its principles are not directly enforceable but guide ASIC’s 
+regulatory framework. The bank should anticipate ASIC incorporating these principles into Australian law and adjust 
+accordingly, rather than acting preemptively, ignoring them, or seeking irrelevant IOSCO certification (which does not 
+exist for individual firms).
 
 ---
 
 ### Question 4: FSB and Systemic Risk
-**Scenario:** The Financial Stability Board (FSB) warns of systemic risks from rapid growth in decentralized finance (DeFi) platforms. An Australian bank with exposure to DeFi through client investments must respond to maintain stability.
+**Scenario:** The Financial Stability Board (FSB) warns of systemic risks from rapid growth in decentralized finance 
+(DeFi) platforms. An Australian bank with exposure to DeFi through client investments must respond to maintain stability.
 
 **Options:**  
 A) Ban all DeFi-related transactions to preempt regulatory action.  
