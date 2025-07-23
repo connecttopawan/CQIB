@@ -1,0 +1,156 @@
+## Question 1: Cash Transaction Reporting
+**Scenario**: A customer deposits $12,000 in cash into their account at Bank X. The bank fails to report this transaction to AUSTRAC. Later, it is discovered that the cash was part of a money laundering operation.
+
+**Question**: What is the potential consequence for Bank X due to the failure to report this transaction?  
+A) No consequence, as the bank was unaware of the money laundering at the time.  
+B) The bank may face significant financial penalties and regulatory action from AUSTRAC.  
+C) Only the customer will be held accountable for the money laundering.  
+D) The bank must refund the $12,000 to the customer.
+
+**Correct Answer**: B) The bank may face significant financial penalties and regulatory action from AUSTRAC.  
+
+**Explanation**: Under the Anti-Money Laundering and Counter-Terrorism Financing Act 2006 (AML/CTF Act), banks must report cash transactions of $10,000 or more to AUSTRAC. Failure to comply can result in significant penalties, as it hinders efforts to detect and prevent money laundering. The bank’s lack of awareness does not exempt it from this obligation.  
+[Reference: AUSTRAC - Threshold Transaction Reports](https://www.austrac.gov.au/business/reporting-obligations/threshold-transaction-reports)
+
+---
+
+## Question 2: Cuckoo Smurfing
+**Scenario**: Bank Y observes multiple small cash deposits into a single account, each below $10,000, made by different individuals. The account holder claims not to know these individuals. Investigations reveal this is part of a cuckoo smurfing scheme.
+
+**Question**: What should Bank Y do in this situation?  
+A) Ignore the deposits since each is below the $10,000 reporting threshold.  
+B) Report the suspicious activity to AUSTRAC as potential money laundering.  
+C) Contact the account holder for clarification without reporting to AUSTRAC.  
+D) Disclose the suspicion directly to law enforcement without involving AUSTRAC.
+
+**Correct Answer**: B) Report the suspicious activity to AUSTRAC as potential money laundering.  
+
+**Explanation**: Cuckoo smurfing involves structuring deposits to avoid detection, a common money laundering technique. AUSTRAC guidelines (June 2021) require banks to report suspicious patterns as a Suspicious Matter Report (SMR), even if individual transactions are below $10,000.  
+[Reference: AUSTRAC - Cuckoo Smurfing](https://www.austrac.gov.au/business/how-comply-guidance-and-resources/guidance-resources/cuckoo-smurfing)
+
+---
+
+## Question 3: Terrorism Financing
+**Scenario**: Bank Z identifies a customer making frequent small transactions (each under $5,000) to overseas recipients. The customer is flagged on a terrorist watch list provided by AUSTRAC.
+
+**Question**: What is Bank Z’s obligation in this situation?  
+A) Monitor the transactions but do not report unless they exceed $10,000.  
+B) Immediately submit a Suspicious Matter Report (SMR) to AUSTRAC.  
+C) Inform the customer that their account is under scrutiny.  
+D) Freeze the account without reporting to AUSTRAC.
+
+**Correct Answer**: B) Immediately submit a Suspicious Matter Report (SMR) to AUSTRAC.  
+
+**Explanation**: The AML/CTF Act requires banks to report suspicious transactions, especially those linked to terrorism financing, regardless of the amount. A customer on a terrorist watch list making frequent small transfers triggers an immediate SMR to AUSTRAC to prevent potential terrorism financing.  
+[Reference: AUSTRAC - Suspicious Matter Reports](https://www.austrac.gov.au/business/reporting-obligations/suspicious-matter-reports)
+
+---
+
+## Question 4: Australian Privacy Principles
+**Scenario**: During a loan application, Customer A provides Bank W with health information. After approving the loan, Bank W uses this information for marketing purposes without obtaining further consent.
+
+**Question**: Has Bank W complied with the Australian Privacy Principles (APPs)?  
+A) Yes, because the health information was provided voluntarily by the customer.  
+B) No, because health information is sensitive and requires specific consent for secondary use.  
+C) Yes, as long as the bank anonymizes the data before using it for marketing.  
+D) No, only if the bank had a legitimate interest in using the data for marketing.
+
+**Correct Answer**: B) No, because health information is sensitive and requires specific consent for secondary use.  
+
+**Explanation**: The Privacy Act 1988 and APPs classify health information as sensitive, requiring explicit consent for any use beyond the primary purpose (loan assessment). Using it for marketing without consent breaches APP 6.  
+[Reference: OAIC - Australian Privacy Principles](https://www.oaic.gov.au/privacy/australian-privacy-principles)
+
+---
+
+## Question 5: Financial Accountability Regime (FAR)
+**Scenario**: In 2025, Bank V fails to meet its accountability obligations under the Financial Accountability Regime (FAR). Senior executives did not ensure proper risk management, leading to regulatory breaches.
+
+**Question**: Who is responsible for enforcing penalties against Bank V for failing to meet its FAR obligations?  
+A) AUSTRAC  
+B) APRA and ASIC jointly  
+C) AFCA  
+D) Reserve Bank of Australia (RBA)
+
+**Correct Answer**: B) APRA and ASIC jointly  
+
+**Explanation**: The FAR, effective from March 2024, is jointly administered by APRA and ASIC. These regulators enforce accountability obligations for banks and their senior executives, ensuring compliance with risk management and governance standards.  
+[Reference: APRA - Financial Accountability Regime](https://www.apra.gov.au/financial-accountability-regime)
+
+---
+
+## Question 6: Interplay Between Regulators
+**Scenario**: Bank U is investigated by ASIC for misleading advertising, by APRA for capital adequacy issues, and has a customer complaint lodged with AFCA over a loan dispute.
+
+**Question**: Which regulator is responsible for addressing the customer’s complaint about the loan agreement?  
+A) ASIC, because it oversees financial services and market conduct.  
+B) APRA, because it regulates the prudential aspects of banking.  
+C) AFCA, as it is the independent dispute resolution scheme for financial complaints.  
+D) AUSTRAC, since it might involve money laundering if the loan was used for illicit purposes.
+
+**Correct Answer**: C) AFCA, as it is the independent dispute resolution scheme for financial complaints.  
+
+**Explanation**: AFCA handles consumer and small business complaints about financial products, offering a free and independent resolution process. ASIC and APRA focus on market conduct and prudential regulation, respectively, while AUSTRAC addresses AML/CTF issues.  
+[Reference: AFCA - About Us](https://www.afca.org.au/about-afca)
+
+---
+
+## Question 7: Privacy Act Compliance
+**Scenario**: Bank T suffers a data breach where customer information, including sensitive health data, is accessed by unauthorized parties due to inadequate security measures.
+
+**Question**: Under the Privacy Act 1988, what is Bank T required to do following the data breach?  
+A) Notify affected customers within 30 days of becoming aware of the breach.  
+B) Report the breach to AUSTRAC immediately.  
+C) Inform APRA about the breach as it affects the bank’s stability.  
+D) Only take internal corrective actions without external notification.
+
+**Correct Answer**: A) Notify affected customers within 30 days of becoming aware of the breach.  
+
+**Explanation**: The Privacy Act 1988’s Notifiable Data Breaches (NDB) scheme mandates that banks notify affected individuals and the OAIC if a breach is likely to cause serious harm, typically within 30 days. AUSTRAC and APRA are not directly involved unless the breach involves AML/CTF or prudential issues.  
+[Reference: OAIC - Notifiable Data Breaches](https://www.oaic.gov.au/privacy/notifiable-data-breaches)
+
+---
+
+## Question 8: AFCA’s Role
+**Scenario**: Customer M disputes Bank S’s denial of a hardship variation on their credit card agreement, believing the bank did not follow proper procedures.
+
+**Question**: What is the most appropriate next step for Customer M?  
+A) Lodge a complaint with ASIC to investigate the bank’s conduct.  
+B) Take the matter to court to seek legal redress.  
+C) Contact AFCA to have the dispute independently reviewed.  
+D) Report the issue to APRA as it relates to banking practices.
+
+**Correct Answer**: C) Contact AFCA to have the dispute independently reviewed.  
+
+**Explanation**: AFCA provides a free, independent dispute resolution service for financial complaints, making it the most suitable option for Customer M. ASIC and APRA handle regulatory oversight, not individual disputes, and court action is typically a last resort.  
+[Reference: AFCA - How to Make a Complaint](https://www.afca.org.au/make-a-complaint)
+
+---
+
+## Question 9: FAR Obligations
+**Scenario**: In 2026, Bank R’s CEO delegates key compliance responsibilities to a junior staff member without proper oversight, leading to AML/CTF program failures.
+
+**Question**: Under the Financial Accountability Regime (FAR), who is ultimately accountable for this failure?  
+A) The junior staff member who made the decisions.  
+B) The CEO, as an accountable person under FAR.  
+C) The bank’s board of directors.  
+D) APRA, for not supervising the bank adequately.
+
+**Correct Answer**: B) The CEO, as an accountable person under FAR.  
+
+**Explanation**: FAR holds accountable persons, such as senior executives, liable for ensuring compliance with regulatory obligations. The CEO’s failure to oversee delegated responsibilities makes them accountable for the AML/CTF breaches.  
+[Reference: ASIC - Financial Accountability Regime](https://asic.gov.au/regulatory-resources/financial-services/financial-accountability-regime/)
+
+---
+
+## Question 10: Interplay of Legislations
+**Scenario**: Bank Q is launching a new product requiring sensitive customer information (e.g., health data) and must comply with AML/CTF regulations.
+
+**Question**: Which legislation must Bank Q primarily comply with for handling sensitive customer information?  
+A) Anti-Money Laundering and Counter-Terrorism Financing Act 2006 (AML/CTF Act)  
+B) Privacy Act 1988  
+C) Corporations Act 2001  
+D) National Consumer Credit Protection Act 2009 (NCCP Act)
+
+**Correct Answer**: B) Privacy Act 1988  
+
+**Explanation**: The Privacy Act 1988 governs the handling of sensitive information, such as health data, through the Australian Privacy Principles (APPs). While AML/CTF compliance is also required, the handling of sensitive information primarily falls under the Privacy Act.  
