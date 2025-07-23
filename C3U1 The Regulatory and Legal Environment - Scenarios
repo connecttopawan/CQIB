@@ -1,0 +1,89 @@
+## Question 1: Roles of Regulators
+**Scenario**: A customer discovers that their bank has shared their personal financial information with a third party without their consent. They want to file a complaint. Which regulator should they approach?  
+**A**. Reserve Bank of Australia (RBA)  
+**B**. Australian Securities and Investments Commission (ASIC)  
+**C**. Australian Prudential Regulation Authority (APRA)  
+**D**. Australian Competition and Consumer Commission (ACCC)  
+**Answer**: B  
+**Explanation**: ASIC oversees consumer protection in the financial services sector, including handling complaints about privacy breaches and misconduct by financial institutions. The RBA focuses on monetary policy and financial stability, APRA on prudential regulation, and the ACCC on competition and consumer protection in general markets, not specifically financial services.
+
+## Question 2: Payments System
+**Scenario**: A small business needs to make an urgent payment of $50,000 to a supplier. The payment must be processed instantly and settled in central bank funds. Which payment system should they use?  
+**A**. High Value Clearing System (HVCS)  
+**B**. New Payments Platform (NPP)  
+**C**. Cheque payment  
+**D**. BPAY  
+**Answer**: B  
+**Explanation**: The New Payments Platform (NPP), launched in February 2018, enables real-time payments with instant settlement in central bank funds via the Fast Settlement Service (FSS). The HVCS is designed for high-value payments but may not guarantee real-time settlement for smaller amounts. Cheques are slow and not suitable for urgent transactions, and BPAY is primarily for bill payments.
+
+## Question 3: Financial Stability
+**Scenario**: During a financial crisis, several Australian banks face liquidity shortages due to a sudden increase in deposit withdrawals. The RBA intervenes to prevent a systemic collapse. What role does the RBA play in this situation?  
+**A**. Setting stricter capital requirements  
+**B**. Acting as a lender of last resort  
+**C**. Increasing the cash rate to stabilize the economy  
+**D**. Suspending all banking operations temporarily  
+**Answer**: B  
+**Explanation**: The RBA acts as a lender of last resort by providing emergency liquidity to solvent but illiquid financial institutions, preventing bank runs and systemic failures. Setting capital requirements is APRA’s responsibility, increasing the cash rate could worsen the crisis, and suspending banking operations is not within the RBA’s purview.
+
+## Question 4: Consumer Protection
+**Scenario**: A bank is found to have misled customers about the features of a new savings product, leading to significant financial losses for the customers. Which regulator is responsible for investigating this issue?  
+**A**. Reserve Bank of Australia (RBA)  
+**B**. Australian Securities and Investments Commission (ASIC)  
+**C**. Australian Prudential Regulation Authority (APRA)  
+**D**. Australian Transaction Reports and Analysis Centre (AUSTRAC)  
+**Answer**: B  
+**Explanation**: ASIC is responsible for market integrity and consumer protection, including investigating misleading conduct by financial institutions. The RBA focuses on monetary policy, APRA on prudential regulation, and AUSTRAC on anti-money laundering and counter-terrorism financing.
+
+## Question 5: Prudential Regulation
+**Scenario**: APRA identifies that a bank’s capital reserves are below the required minimum due to high-risk lending practices. What action is APRA most likely to take?  
+**A**. Fine the bank for non-compliance  
+**B**. Order the bank to increase its capital reserves  
+**C**. Revoke the bank’s license immediately  
+**D**. Merge the bank with a larger institution  
+**Answer**: B  
+**Explanation**: APRA ensures banks meet prudential standards, including capital adequacy. If reserves are insufficient, APRA would typically require the bank to raise additional capital before considering more severe actions like fines or license revocation.
+
+## Question 6: Anti-Money Laundering (AML)
+**Scenario**: AUSTRAC conducts an audit and finds that a bank’s AML/CTF program is inadequate, with insufficient monitoring of high-risk transactions. What are the potential consequences for the bank?  
+**A**. The bank must immediately cease all international transactions.  
+**B**. The bank may face civil penalties and be required to enhance its AML/CTF program.  
+**C**. The bank’s license will be revoked.  
+**D**. The bank must pay a fixed fine of $1 million.  
+**Answer**: B  
+**Explanation**: AUSTRAC can impose civil penalties for non-compliance with AML/CTF obligations and may require the bank to improve its compliance program. Ceasing international transactions or license revocation are not automatic consequences, and fines are not fixed at a specific amount.
+
+## Question 7: Monetary Policy
+**Scenario**: The RBA decides to lower the cash rate to stimulate economic growth during a recession. What is the primary goal of this action?  
+**A**. To increase inflation above 3%  
+**B**. To reduce unemployment and boost economic activity  
+**C**. To stabilize the exchange rate  
+**D**. To increase government revenue through higher taxes  
+**Answer**: B  
+**Explanation**: The RBA’s monetary policy targets a 2-3% inflation rate while promoting full employment and economic prosperity. Lowering the cash rate reduces borrowing costs, encouraging spending and investment to reduce unemployment and stimulate growth.
+
+## Question 8: Payments System Innovation
+**Scenario**: A fintech company wants to launch a new mobile payment app that allows instant peer-to-peer transfers. Which payment system infrastructure should they integrate with to ensure real-time settlement?  
+**A**. High Value Clearing System (HVCS)  
+**B**. New Payments Platform (NPP)  
+**C**. Reserve Bank Information and Transfer System (RITS)  
+**D**. BPAY  
+**Answer**: B  
+**Explanation**: The NPP is designed for real-time payments, making it ideal for instant peer-to-peer transfers. The HVCS is for high-value payments, RITS supports HVCS settlements, and BPAY is for bill payments, not peer-to-peer transfers.
+
+## Question 9: Regulatory Compliance
+**Scenario**: A bank is considering offering a new type of high-yield savings account to retail customers. Which legislation must the bank comply with to ensure the product is appropriately disclosed and marketed?  
+**A**. Reserve Bank Act 1959  
+**B**. Corporations Act 2001  
+**C**. Banking Act 1959  
+**D**. Competition and Consumer Act 2010  
+**Answer**: B  
+**Explanation**: The Corporations Act 2001 regulates financial services and products, including disclosure and marketing requirements for retail clients. The Reserve Bank Act 1959 governs the RBA, the Banking Act 1959 covers prudential regulation, and the Competition and Consumer Act 2010 addresses general competition and consumer issues.
+
+## Question 10: Corporate Governance
+**Scenario**: A bank’s board of directors is reviewing its internal control systems after a major fraud incident involving employee misconduct. Which aspect of corporate governance is most relevant to this situation?  
+**A**. Board composition and independence  
+**B**. Executive remuneration policies  
+**C**. Internal control systems and risk management  
+**D**. Shareholder rights and dividend policies  
+**Answer**: C  
+**Explanation**: Robust internal control systems and risk management are critical components of corporate governance to prevent and detect fraud. The board is responsible for overseeing these systems to ensure the bank’s integrity and stability.
