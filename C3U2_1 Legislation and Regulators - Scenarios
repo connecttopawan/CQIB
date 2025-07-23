@@ -1,0 +1,207 @@
+## Question 1: Roles of ASIC and APRA
+**Scenario:** A major Australian bank faces a crisis due to a cyberattack compromising customer data. Simultaneously, it is accused of misleading advertising for a new home loan product. Which regulator would primarily handle each issue?
+
+A) ASIC for the cyberattack; APRA for the misleading advertising.  
+B) APRA for the cyberattack; ASIC for the misleading advertising.  
+C) ASIC for both issues, as it oversees all financial services.  
+D) APRA for both issues, as it ensures financial stability.
+
+**Correct Answer:** B) APRA for the cyberattack; ASIC for the misleading advertising.  
+
+**Explanation:** The Australian Prudential Regulation Authority (APRA) oversees prudential regulation, ensuring financial institutions remain stable and resilient, including against risks like cyberattacks. The Australian Securities and Investments Commission (ASIC) regulates financial services and markets, addressing issues like misleading advertising under the Corporations Act 2001 and Regulatory Guide 234.
+
+---
+
+## Question 2: Product Design and Distribution Obligations (DDO)
+**Scenario:** A superannuation fund launches a high-risk investment option and prepares a Target Market Determination (TMD). It later finds that 25% of customers purchasing the product do not fit the target market profile, potentially causing financial harm. What is the fund’s obligation under the DDO regime?
+
+A) No action is required, as 25% is below the threshold for concern.  
+B) Notify ASIC of the discrepancy and review the TMD.  
+C) Immediately withdraw the product from the market.  
+D) Offer refunds to all customers who purchased the product.
+
+**Correct Answer:** B) Notify ASIC of the discrepancy and review the TMD.  
+
+**Explanation:** Under the Design and Distribution Obligations (DDO) regime, as outlined in ASIC’s Regulatory Guide 274, issuers must notify ASIC of “significant dealings” not consistent with the TMD within 10 business days. A 25% mismatch suggests potential harm, requiring the fund to review the TMD to ensure it remains appropriate.
+
+---
+
+## Question 3: Retail vs. Wholesale Client Classification
+**Scenario:** A financial adviser advises two clients: (1) a small business owner with 10 employees seeking a $400,000 loan, and (2) an individual with net assets of $2.8 million (including $1.2 million in superannuation) wanting to invest in a complex financial product. How should the adviser classify these clients?
+
+A) Both are retail clients.  
+B) The small business owner is a wholesale client; the individual is a retail client.  
+C) The small business owner is a retail client; the individual is a wholesale client.  
+D) Both are wholesale clients.
+
+**Correct Answer:** C) The small business owner is a retail client; the individual is a wholesale client.  
+
+**Explanation:** Under the Corporations Act 2001, a small business with fewer than 20 employees is classified as a retail client. The individual, with net assets of $2.8 million (including superannuation), meets the “individual wealth” test for wholesale clients (threshold: $2.5 million), as superannuation is typically included in net assets.
+
+---
+
+## Question 4: AFSL Licensee Obligations
+**Scenario:** An Australian Financial Services Licensee (AFSL) is audited by ASIC and found to have inadequate training for advisers, no documented conflict of interest policy, and incomplete disclosure documents for retail clients. Which Regulatory Guides are most relevant to address these issues?
+
+A) Regulatory Guide 104 and Regulatory Guide 146.  
+B) Regulatory Guide 274 and Regulatory Guide 105.  
+C) Regulatory Guide 36 and Regulatory Guide 104.  
+D) Regulatory Guide 168 and Regulatory Guide 175.
+
+**Correct Answer:** C) Regulatory Guide 36 and Regulatory Guide 104.  
+
+**Explanation:** Regulatory Guide 104 outlines AFSL obligations, including ensuring representative competence and managing conflicts of interest. Regulatory Guide 36 addresses financial product advice and dealing, relevant to disclosure issues. These guides directly address the audit findings.
+
+---
+
+## Question 5: National Consumer Credit Protection Act 2009
+**Scenario:** A credit provider offers a new credit card with a variable interest rate. To comply with the National Consumer Credit Protection Act 2009 (NCCP Act), what must be included in the credit contract?
+
+A) A fixed interest rate for at least 12 months.  
+B) A hardship variation provision.  
+C) A minimum credit limit of $5,000.  
+D) A requirement for a credit score above 700.
+
+**Correct Answer:** B) A hardship variation provision.  
+
+**Explanation:** The NCCP Act mandates that credit contracts include a hardship variation provision, allowing consumers to request repayment changes during financial hardship. Fixed interest rates, minimum credit limits, or specific credit scores are not required.
+
+---
+
+## Question 6: Competition and Consumer Act 2010
+**Scenario:** A bank is accused of anti-competitive behavior by offering exclusive deals to large corporate clients, potentially harming smaller competitors. Which regulator would investigate?
+
+A) ASIC  
+B) APRA  
+C) ACCC  
+D) Department of the Treasury
+
+**Correct Answer:** C) ACCC  
+
+**Explanation:** The Australian Competition and Consumer Commission (ACCC) enforces the Competition and Consumer Act 2010, addressing anti-competitive conduct across industries, including banking. ASIC focuses on financial services, APRA on prudential regulation, and the Treasury on policy development.
+
+---
+
+## Question 7: Future of Financial Advice (FOFA) Reforms
+**Scenario:** A financial adviser provides personal advice to a retail client about a managed fund. Under the FOFA reforms, what is the adviser’s primary duty?
+
+A) To maximize the client’s returns.  
+B) To act in the best interests of the client.  
+C) To minimize the client’s risks.  
+D) To align with the employer’s policies.
+
+**Correct Answer:** B) To act in the best interests of the client.  
+
+**Explanation:** The FOFA reforms introduced a “best interests” duty, requiring advisers to prioritize the client’s objectives, financial situation, and needs when providing personal advice, ensuring suitability and appropriateness.
+
+---
+
+## Question 8: Corporations Act 2001 – Disclosure Requirements
+**Scenario:** A financial product issuer prepares a Product Disclosure Statement (PDS) for a new investment product. What must be included in the PDS under the Corporations Act 2001?
+
+A) The issuer’s marketing strategy.  
+B) The risks and benefits of the product.  
+C) Names of employees designing the product.  
+D) A comparison with competitors’ products.
+
+**Correct Answer:** B) The risks and benefits of the product.  
+
+**Explanation:** The Corporations Act 2001 requires a PDS to include details about the risks and benefits of the product to help retail clients make informed decisions. Marketing strategies, employee names, and competitor comparisons are not mandated.
+
+---
+
+## Question 9: Council of Financial Regulators (CFR)
+**Scenario:** The Australian government seeks to coordinate a response to a global economic downturn affecting financial stability. Which body would facilitate this coordination?
+
+A) ASIC  
+B) APRA  
+C) ACCC  
+D) Council of Financial Regulators (CFR)
+
+**Correct Answer:** D) Council of Financial Regulators (CFR)  
+
+**Explanation:** The CFR, comprising ASIC, APRA, the Reserve Bank of Australia (RBA), and the Treasury, coordinates regulatory responses to ensure financial system stability, making it the appropriate body for systemic issues.
+
+---
+
+## Question 10: Prudential Regulation by APRA
+**Scenario:** APRA reviews a bank’s capital adequacy and liquidity ratios. What is the primary purpose of this review?
+
+A) To prevent misleading advertising.  
+B) To protect depositors and maintain financial stability.  
+C) To enforce competition laws.  
+D) To ensure DDO compliance.
+
+**Correct Answer:** B) To protect depositors and maintain financial stability.  
+
+**Explanation:** APRA’s role, under the Banking Act 1959 and APRA Act 1998, is to ensure financial institutions are prudentially sound, protecting depositors and maintaining system stability through measures like capital and liquidity reviews.
+
+---
+
+## Question 11: Misleading Conduct and ASIC
+**Scenario:** A bank advertises a savings account as offering “the highest interest rate in the market,” but the fine print reveals the rate applies only for three months. A customer complains. Which regulator handles this?
+
+A) APRA  
+B) ACCC  
+C) ASIC  
+D) Department of the Treasury
+
+**Correct Answer:** C) ASIC  
+
+**Explanation:** ASIC regulates financial services and ensures providers avoid misleading conduct, as per Regulatory Guide 234. The advertisement’s lack of clarity about the interest rate duration falls under ASIC’s jurisdiction.
+
+---
+
+## Question 12: Client Classification – Sophisticated Investors
+**Scenario:** A client with $1.5 million in net assets and significant investment experience requests wholesale client status. Under what conditions can the adviser classify them as wholesale?
+
+A) If the client signs a waiver of consumer protections.  
+B) If the client meets the “sophisticated investor” test under section 761GA.  
+C) If the client invests over $500,000 in the product.  
+D) Wholesale classification is not possible without meeting the net asset threshold.
+
+**Correct Answer:** B) If the client meets the “sophisticated investor” test under section 761GA.  
+
+**Explanation:** Section 761GA of the Corporations Act allows classification as a wholesale client if the adviser is satisfied the client has sufficient investment experience, with appropriate documentation. The net asset threshold ($2.5 million) is not mandatory for this test.
+
+---
+
+## Question 13: National Consumer Credit Protection Act – Credit Guide
+**Scenario:** A credit provider must provide a Credit Guide for a personal loan. What must be included in the Credit Guide under the NCCP Act?
+
+A) The provider’s marketing strategy.  
+B) General terms and conditions for credit.  
+C) Names of employees assessing applications.  
+D) A comparison with competitors’ loans.
+
+**Correct Answer:** B) General terms and conditions for credit.  
+
+**Explanation:** The NCCP Act requires a Credit Guide to include general terms and conditions, fees, charges, and complaint procedures. Marketing strategies, employee names, and competitor comparisons are not required.
+
+---
+
+## Question 14: FOFA Reforms – Conflicted Remuneration
+**Scenario:** A financial adviser receives a commission from a product issuer for recommending their product. Under the FOFA reforms, what is the status of this commission?
+
+A) Allowed if disclosed to the client.  
+B) Banned as conflicted remuneration.  
+C) Allowed if less than 1% of the product’s value.  
+D) Allowed if the client signs a waiver.
+
+**Correct Answer:** B) Banned as conflicted remuneration.  
+
+**Explanation:** The FOFA reforms ban conflicted remuneration, such as commissions from product issuers, to ensure advisers act in clients’ best interests without conflicts, regardless of disclosure or waivers.
+
+---
+
+## Question 15: Roles of the Department of the Treasury
+**Scenario:** The Australian government plans new legislation to enhance consumer protection in financial services. Which body is primarily responsible for drafting this legislation?
+
+A) ASIC  
+B) APRA  
+C) ACCC  
+D) Department of the Treasury
+
+**Correct Answer:** D) Department of the Treasury  
+
+**Explanation:** The Department of the Treasury develops and drafts government policy and legislation for financial services, while ASIC, APRA, and ACCC enforce existing laws.
