@@ -1,0 +1,1406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CASB Power-Up Book 🏦</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0d1b2a;
+    --blue: #1565c0;
+    --sky: #29b6f6;
+    --gold: #f9a825;
+    --mint: #00e5ff;
+    --bg: #f0f4f8;
+    --card: #ffffff;
+    --text: #1a2332;
+    --muted: #5a6a7e;
+    --green: #00c853;
+    --red: #ef5350;
+    --border: #dde3ec;
+    --sidebar-w: 260px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    display: flex;
+  }
+
+  /* ──────────── SIDEBAR ──────────── */
+  #sidebar {
+    width: var(--sidebar-w);
+    min-height: 100vh;
+    background: var(--navy);
+    position: fixed; top: 0; left: 0;
+    display: flex; flex-direction: column;
+    z-index: 100;
+    transition: transform .3s ease;
+  }
+
+  .sb-header {
+    padding: 28px 20px 20px;
+    border-bottom: 1px solid rgba(255,255,255,.1);
+  }
+  .sb-logo {
+    font-family: 'Syne', sans-serif;
+    font-size: 22px; font-weight: 800;
+    color: var(--mint);
+    letter-spacing: -0.5px;
+  }
+  .sb-sub { font-size: 11px; color: rgba(255,255,255,.45); margin-top: 4px; }
+
+  .progress-bar-wrap {
+    margin: 14px 20px 0;
+    background: rgba(255,255,255,.1);
+    border-radius: 4px; height: 5px;
+  }
+  .progress-bar-fill {
+    height: 100%; border-radius: 4px;
+    background: linear-gradient(90deg, var(--sky), var(--mint));
+    transition: width .5s ease;
+    width: 0%;
+  }
+  .progress-label {
+    font-size: 10px; color: rgba(255,255,255,.4);
+    margin-top: 5px; margin-left: 20px;
+  }
+
+  .sb-nav { flex: 1; padding: 16px 0; overflow-y: auto; }
+  .nav-item {
+    display: flex; align-items: center; gap: 12px;
+    padding: 11px 20px;
+    cursor: pointer;
+    color: rgba(255,255,255,.55);
+    font-size: 13.5px;
+    font-weight: 500;
+    transition: all .2s;
+    border-left: 3px solid transparent;
+    position: relative;
+  }
+  .nav-item:hover { color: #fff; background: rgba(255,255,255,.05); }
+  .nav-item.active {
+    color: var(--mint);
+    background: rgba(0,229,255,.07);
+    border-left-color: var(--mint);
+  }
+  .nav-item .num {
+    width: 24px; height: 24px; border-radius: 50%;
+    background: rgba(255,255,255,.08);
+    display: grid; place-items: center;
+    font-size: 11px; font-family: 'Syne', sans-serif;
+    flex-shrink: 0;
+  }
+  .nav-item.active .num { background: var(--mint); color: var(--navy); }
+  .nav-item.done .num { background: var(--green); color: #fff; }
+  .nav-item .check { position: absolute; right: 14px; font-size: 12px; opacity: 0; transition: opacity .2s; }
+  .nav-item.done .check { opacity: 1; }
+
+  /* ──────────── MAIN ──────────── */
+  #main {
+    margin-left: var(--sidebar-w);
+    flex: 1;
+    min-height: 100vh;
+    display: flex; flex-direction: column;
+  }
+
+  .topbar {
+    background: white;
+    border-bottom: 1px solid var(--border);
+    padding: 16px 40px;
+    display: flex; align-items: center; justify-content: space-between;
+    position: sticky; top: 0; z-index: 50;
+  }
+  .topbar-title {
+    font-family: 'Syne', sans-serif; font-size: 15px; font-weight: 700;
+    color: var(--navy);
+  }
+  .topbar-badge {
+    background: var(--navy); color: var(--mint);
+    font-size: 11px; font-weight: 600;
+    padding: 4px 12px; border-radius: 20px;
+    font-family: 'Syne', sans-serif;
+  }
+
+  #content {
+    padding: 40px;
+    max-width: 860px;
+  }
+
+  /* ──────────── CHAPTER SECTIONS ──────────── */
+  .chapter { display: none; animation: fadeUp .4s ease; }
+  .chapter.active { display: block; }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .ch-eyebrow {
+    font-size: 11px; font-weight: 600; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--sky);
+    margin-bottom: 10px;
+  }
+  .ch-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 36px; font-weight: 800;
+    color: var(--navy); line-height: 1.15;
+    margin-bottom: 12px;
+  }
+  .ch-lead {
+    font-size: 17px; color: var(--muted); font-weight: 300;
+    line-height: 1.7; margin-bottom: 36px;
+    max-width: 640px;
+  }
+
+  /* ──────────── CARDS ──────────── */
+  .card-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px; margin: 24px 0;
+  }
+  .card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 22px;
+    transition: transform .2s, box-shadow .2s;
+    cursor: default;
+  }
+  .card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,.08); }
+  .card .card-icon { font-size: 28px; margin-bottom: 12px; }
+  .card .card-title {
+    font-family: 'Syne', sans-serif; font-size: 15px; font-weight: 700;
+    color: var(--navy); margin-bottom: 8px;
+  }
+  .card p { font-size: 13.5px; color: var(--muted); line-height: 1.6; }
+
+  .card.accent { background: var(--navy); border-color: var(--navy); }
+  .card.accent .card-title { color: var(--mint); }
+  .card.accent p { color: rgba(255,255,255,.6); }
+
+  /* ──────────── INFO BOX ──────────── */
+  .info-box {
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin: 20px 0;
+    border-left: 4px solid;
+  }
+  .info-box.blue { background: #e3f2fd; border-color: var(--blue); }
+  .info-box.gold { background: #fffde7; border-color: var(--gold); }
+  .info-box.green { background: #e8f5e9; border-color: var(--green); }
+  .info-box.red { background: #fce4ec; border-color: var(--red); }
+
+  .info-box .ib-title {
+    font-family: 'Syne', sans-serif; font-size: 14px; font-weight: 700;
+    margin-bottom: 8px;
+  }
+  .info-box p { font-size: 14px; line-height: 1.7; color: var(--text); }
+
+  /* ──────────── TIMELINE / FLOW ──────────── */
+  .flow {
+    display: flex; flex-direction: column; gap: 0;
+    margin: 24px 0;
+  }
+  .flow-step {
+    display: flex; align-items: flex-start; gap: 16px;
+    position: relative; padding-bottom: 20px;
+  }
+  .flow-step:last-child { padding-bottom: 0; }
+  .flow-step::before {
+    content: '';
+    position: absolute; left: 20px; top: 42px;
+    width: 2px; height: calc(100% - 20px);
+    background: linear-gradient(180deg, var(--sky), transparent);
+  }
+  .flow-step:last-child::before { display: none; }
+  .step-dot {
+    width: 42px; height: 42px; border-radius: 50%; flex-shrink: 0;
+    display: grid; place-items: center;
+    font-size: 16px; font-weight: 700;
+    font-family: 'Syne', sans-serif;
+    background: white; border: 2px solid var(--sky);
+    color: var(--blue); z-index: 1;
+  }
+  .step-body { padding-top: 8px; }
+  .step-body strong {
+    font-family: 'Syne', sans-serif; font-size: 15px;
+    color: var(--navy); display: block; margin-bottom: 5px;
+  }
+  .step-body span { font-size: 13.5px; color: var(--muted); line-height: 1.6; }
+
+  /* ──────────── TABLE ──────────── */
+  .nice-table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 14px; }
+  .nice-table th {
+    background: var(--navy); color: var(--mint);
+    font-family: 'Syne', sans-serif; font-size: 12px;
+    text-transform: uppercase; letter-spacing: 1px;
+    padding: 12px 16px; text-align: left;
+  }
+  .nice-table td { padding: 12px 16px; border-bottom: 1px solid var(--border); color: var(--text); }
+  .nice-table tr:nth-child(even) td { background: #f7fafc; }
+  .nice-table tr:hover td { background: #eaf4ff; }
+
+  /* ──────────── EXPANDABLE CARDS ──────────── */
+  .expand-card {
+    border: 1px solid var(--border); border-radius: 12px;
+    margin: 10px 0; overflow: hidden;
+  }
+  .expand-header {
+    padding: 16px 20px;
+    display: flex; justify-content: space-between; align-items: center;
+    cursor: pointer;
+    background: white;
+    transition: background .2s;
+  }
+  .expand-header:hover { background: #f5f8ff; }
+  .expand-header span { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 14.5px; color: var(--navy); }
+  .expand-header .arrow {
+    font-size: 12px; color: var(--muted); transition: transform .3s;
+    padding: 4px 8px; background: var(--bg); border-radius: 6px;
+  }
+  .expand-card.open .arrow { transform: rotate(180deg); }
+  .expand-body {
+    display: none; padding: 4px 20px 18px;
+    background: white; font-size: 14px; color: var(--muted); line-height: 1.7;
+  }
+  .expand-card.open .expand-body { display: block; }
+
+  /* ──────────── QUIZ ──────────── */
+  .quiz-wrap { margin: 0; }
+  .quiz-q {
+    background: white; border: 1px solid var(--border); border-radius: 14px;
+    padding: 24px; margin: 16px 0;
+    transition: box-shadow .2s;
+  }
+  .quiz-q.answered { box-shadow: 0 0 0 2px var(--green); }
+  .quiz-q .q-text {
+    font-family: 'Syne', sans-serif; font-weight: 700; font-size: 16px;
+    color: var(--navy); margin-bottom: 16px;
+  }
+  .options { display: flex; flex-direction: column; gap: 8px; }
+  .option {
+    padding: 11px 16px;
+    border: 1.5px solid var(--border);
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all .2s;
+    background: var(--bg);
+    color: var(--text);
+  }
+  .option:hover { border-color: var(--sky); background: #e8f4fd; }
+  .option.correct { background: #e8f5e9; border-color: var(--green); color: #1b5e20; font-weight: 600; }
+  .option.wrong { background: #fce4ec; border-color: var(--red); color: #c62828; }
+  .option.disabled { cursor: default; pointer-events: none; }
+
+  .quiz-feedback { margin-top: 12px; font-size: 13.5px; font-weight: 500; display: none; }
+  .quiz-feedback.show { display: block; }
+  .quiz-feedback.ok { color: var(--green); }
+  .quiz-feedback.no { color: var(--red); }
+
+  .quiz-score-card {
+    background: var(--navy); border-radius: 16px;
+    padding: 32px; text-align: center; margin-top: 24px;
+    display: none;
+  }
+  .quiz-score-card.show { display: block; }
+  .qs-title { font-family: 'Syne', sans-serif; font-size: 22px; font-weight: 800; color: var(--mint); margin-bottom: 8px; }
+  .qs-score { font-size: 52px; font-weight: 800; color: white; font-family: 'Syne', sans-serif; }
+  .qs-label { font-size: 14px; color: rgba(255,255,255,.5); margin-top: 6px; }
+
+  /* ──────────── PIPELINE VIZ ──────────── */
+  .pipeline {
+    display: flex; align-items: center; gap: 0;
+    margin: 28px 0; flex-wrap: wrap; gap: 8px;
+  }
+  .pipe-box {
+    flex: 1; min-width: 120px;
+    background: white; border: 1.5px solid var(--border);
+    border-radius: 12px; padding: 16px 12px;
+    text-align: center; position: relative;
+    transition: transform .2s, box-shadow .2s;
+    cursor: pointer;
+  }
+  .pipe-box:hover { transform: translateY(-4px); box-shadow: 0 8px 20px rgba(0,0,0,.1); }
+  .pipe-box .pipe-icon { font-size: 24px; margin-bottom: 6px; }
+  .pipe-box .pipe-name { font-family: 'Syne', sans-serif; font-size: 13px; font-weight: 700; color: var(--navy); }
+  .pipe-box .pipe-sub { font-size: 11px; color: var(--muted); margin-top: 4px; }
+  .pipe-box.bronze { border-color: #cd7f32; background: #fff8f1; }
+  .pipe-box.silver { border-color: #9e9e9e; background: #f8f8f8; }
+  .pipe-box.gold   { border-color: #f9a825; background: #fffde7; }
+  .pipe-box.source { border-color: var(--blue); background: #e3f2fd; }
+  .pipe-arrow { font-size: 22px; color: var(--muted); flex-shrink: 0; }
+
+  /* ──────────── NAV BUTTONS ──────────── */
+  .ch-footer {
+    margin-top: 48px; padding-top: 24px;
+    border-top: 1px solid var(--border);
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .btn {
+    padding: 12px 28px; border-radius: 10px;
+    border: none; cursor: pointer;
+    font-family: 'Syne', sans-serif; font-size: 14px; font-weight: 700;
+    transition: all .2s;
+  }
+  .btn-primary { background: var(--navy); color: var(--mint); }
+  .btn-primary:hover { background: var(--blue); }
+  .btn-ghost { background: white; color: var(--navy); border: 1.5px solid var(--border); }
+  .btn-ghost:hover { background: var(--bg); }
+
+  /* ──────────── COVER ──────────── */
+  .cover-hero {
+    background: linear-gradient(135deg, var(--navy) 0%, #1a3a5c 60%, #0a2540 100%);
+    border-radius: 20px;
+    padding: 60px 48px;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 40px;
+  }
+  .cover-hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 80% 20%, rgba(41,182,246,.25) 0%, transparent 60%);
+  }
+  .cover-hero .hero-tag {
+    font-size: 11px; letter-spacing: 3px; font-weight: 600;
+    text-transform: uppercase; color: var(--sky);
+    margin-bottom: 16px;
+  }
+  .cover-hero h1 {
+    font-family: 'Syne', sans-serif; font-size: 48px; font-weight: 800;
+    color: white; line-height: 1.1; margin-bottom: 14px;
+    position: relative;
+  }
+  .cover-hero h1 span { color: var(--mint); }
+  .cover-hero p {
+    font-size: 17px; color: rgba(255,255,255,.65);
+    max-width: 500px; line-height: 1.7; margin-bottom: 32px;
+  }
+  .cover-stats {
+    display: flex; gap: 28px; flex-wrap: wrap;
+    position: relative;
+  }
+  .cover-stat { text-align: center; }
+  .cover-stat .num { font-family: 'Syne', sans-serif; font-size: 28px; font-weight: 800; color: var(--mint); }
+  .cover-stat .lbl { font-size: 11px; color: rgba(255,255,255,.4); letter-spacing: 1px; margin-top: 2px; }
+
+  .start-btn {
+    display: inline-block;
+    background: var(--mint);
+    color: var(--navy);
+    font-family: 'Syne', sans-serif; font-size: 14px; font-weight: 800;
+    padding: 14px 32px; border-radius: 50px;
+    cursor: pointer; border: none;
+    transition: all .2s;
+    margin-bottom: 32px;
+  }
+  .start-btn:hover { background: white; transform: scale(1.03); }
+
+  /* ──────────── HIGHLIGHT ──────────── */
+  .highlight {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: #fff3cd; border: 1px solid #ffd54f;
+    border-radius: 6px; padding: 2px 10px;
+    font-size: 13px; font-weight: 600; color: #6d4c00;
+  }
+
+  /* glossary term hover */
+  .term {
+    border-bottom: 2px dashed var(--sky); cursor: help; position: relative;
+    color: var(--blue); font-weight: 500;
+  }
+
+  /* ──────────── GLOSSARY TAG ──────────── */
+  .tag-row { display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0; }
+  .tag {
+    background: #e8eaf6; color: #283593;
+    font-size: 12px; font-weight: 600; font-family: 'Syne', sans-serif;
+    padding: 5px 12px; border-radius: 20px;
+    border: 1px solid #c5cae9;
+  }
+  .tag.blue { background: #e3f2fd; color: var(--blue); border-color: #bbdefb; }
+  .tag.green { background: #e8f5e9; color: #2e7d32; border-color: #c8e6c9; }
+  .tag.gold { background: #fffde7; color: #e65100; border-color: #fff176; }
+
+  /* ──────────── SECTION HEADING ──────────── */
+  .sec-heading {
+    font-family: 'Syne', sans-serif; font-size: 20px; font-weight: 800;
+    color: var(--navy); margin: 32px 0 16px;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .sec-heading::after {
+    content: '';
+    flex: 1; height: 1px; background: var(--border);
+  }
+
+  p { line-height: 1.8; font-size: 15px; color: var(--text); margin-bottom: 14px; }
+  ul, ol { padding-left: 22px; margin-bottom: 14px; }
+  li { font-size: 15px; line-height: 1.7; color: var(--text); margin-bottom: 4px; }
+
+  @media (max-width: 720px) {
+    #sidebar { transform: translateX(-100%); }
+    #main { margin-left: 0; }
+    #content { padding: 24px 16px; }
+    .ch-title { font-size: 26px; }
+    .cover-hero { padding: 36px 24px; }
+    .cover-hero h1 { font-size: 32px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══════════ SIDEBAR ══════════ -->
+<nav id="sidebar">
+  <div class="sb-header">
+    <div class="sb-logo">📘 CASB Guide</div>
+    <div class="sb-sub">Power-Up Series · All Parts</div>
+    <div class="progress-bar-wrap"><div class="progress-bar-fill" id="progressBar"></div></div>
+    <div class="progress-label" id="progressLabel">0% complete</div>
+  </div>
+  <div class="sb-nav" id="navList">
+    <div class="nav-item active" data-ch="0" onclick="goChapter(0)">
+      <div class="num">🏠</div> Welcome
+      <span class="check">✓</span>
+    </div>
+    <div class="nav-item" data-ch="1" onclick="goChapter(1)">
+      <div class="num">1</div> What is CASB?
+      <span class="check">✓</span>
+    </div>
+    <div class="nav-item" data-ch="2" onclick="goChapter(2)">
+      <div class="num">2</div> Account Types
+      <span class="check">✓</span>
+    </div>
+    <div class="nav-item" data-ch="3" onclick="goChapter(3)">
+      <div class="num">3</div> Old vs New Products
+      <span class="check">✓</span>
+    </div>
+    <div class="nav-item" data-ch="4" onclick="goChapter(4)">
+      <div class="num">4</div> The BRE Bridge
+      <span class="check">✓</span>
+    </div>
+    <div class="nav-item" data-ch="5" onclick="goChapter(5)">
+      <div class="num">5</div> Data Pipeline
+      <span class="check">✓</span>
+    </div>
+    <div class="nav-item" data-ch="6" onclick="goChapter(6)">
+      <div class="num">6</div> Working with ADA
+      <span class="check">✓</span>
+    </div>
+    <div class="nav-item" data-ch="7" onclick="goChapter(7)">
+      <div class="num">🎯</div> Quick Quiz
+      <span class="check">✓</span>
+    </div>
+  </div>
+</nav>
+
+<!-- ══════════ MAIN ══════════ -->
+<div id="main">
+  <div class="topbar">
+    <span class="topbar-title" id="topbarTitle">Welcome</span>
+    <span class="topbar-badge" id="topbarBadge">Chapter 0 of 7</span>
+  </div>
+
+  <div id="content">
+
+    <!-- ── CH 0: COVER ── -->
+    <div class="chapter active" id="ch-0">
+      <div class="cover-hero">
+        <div class="hero-tag">CASB Power-Up Series · Complete Guide</div>
+        <h1>Understand<br><span>CASB</span> Easily</h1>
+        <p>A plain-English, interactive walkthrough of the bank's legacy account system, data pipelines, and modern product setup — from scratch to pro.</p>
+        <button class="start-btn" onclick="goChapter(1)">Start Learning →</button>
+        <div class="cover-stats">
+          <div class="cover-stat"><div class="num">7</div><div class="lbl">CHAPTERS</div></div>
+          <div class="cover-stat"><div class="num">5</div><div class="lbl">FILE TYPES</div></div>
+          <div class="cover-stat"><div class="num">3</div><div class="lbl">DATA LAYERS</div></div>
+          <div class="cover-stat"><div class="num">20</div><div class="lbl">QUIZ Qs</div></div>
+        </div>
+      </div>
+
+      <div class="card-grid">
+        <div class="card" style="cursor:pointer" onclick="goChapter(1)">
+          <div class="card-icon">🏦</div>
+          <div class="card-title">What is CASB?</div>
+          <p>The old but mighty bank system that still runs current accounts today.</p>
+        </div>
+        <div class="card" style="cursor:pointer" onclick="goChapter(3)">
+          <div class="card-icon">🔄</div>
+          <div class="card-title">Old vs New Products</div>
+          <p>From Genasi rules to the modern NAP Product Master with PCIDs.</p>
+        </div>
+        <div class="card" style="cursor:pointer" onclick="goChapter(5)">
+          <div class="card-icon">⚡</div>
+          <div class="card-title">Data Pipeline</div>
+          <p>How CASB data flows from mainframe files into Bronze, Silver, and Gold.</p>
+        </div>
+        <div class="card accent" style="cursor:pointer" onclick="goChapter(7)">
+          <div class="card-icon">🎯</div>
+          <div class="card-title">Test Yourself</div>
+          <p>10 quick questions to prove you got it all.</p>
+        </div>
+      </div>
+
+      <div class="ch-footer">
+        <span></span>
+        <button class="btn btn-primary" onclick="goChapter(1)">Start: Chapter 1 →</button>
+      </div>
+    </div><!-- /ch-0 -->
+
+
+    <!-- ── CH 1: WHAT IS CASB ── -->
+    <div class="chapter" id="ch-1">
+      <div class="ch-eyebrow">Chapter 1</div>
+      <h2 class="ch-title">What is CASB?</h2>
+      <p class="ch-lead">Think of CASB as a very old but important filing cabinet inside the bank — still working after decades, full of account records.</p>
+
+      <div class="info-box blue">
+        <div class="ib-title">🔤 Full Name</div>
+        <p><strong>CASB = Current Account &amp; Savings Bank</strong><br>
+        It's the banking system used to store and manage customer account information for both individuals and businesses.</p>
+      </div>
+
+      <div class="sec-heading">Why is it called "Legacy"?</div>
+      <p>A <strong>legacy system</strong> is one that's old but still in use. CASB was built in the mainframe era — long before cloud, APIs, or real-time systems existed.</p>
+
+      <div class="card-grid">
+        <div class="card">
+          <div class="card-icon">🖥️</div>
+          <div class="card-title">Mainframe-based</div>
+          <p>Runs on big iron computers that process batches of jobs overnight, not on-demand.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">📁</div>
+          <div class="card-title">File-based</div>
+          <p>Data comes as flat files, not through APIs. Think of CSV/text dumps every night.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">⏰</div>
+          <div class="card-title">T+1 Data</div>
+          <p>Yesterday's data arrives today. Real-time updates? Not possible here.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">📜</div>
+          <div class="card-title">Decades Old</div>
+          <p>This system has been running since the 1990s. Historic, reliable — and stubborn.</p>
+        </div>
+      </div>
+
+      <div class="info-box gold">
+        <div class="ib-title">💡 Savings Accounts — A Note</div>
+        <p>The "SB" (Savings Bank) part in CASB is largely gone. The bank no longer offers savings account products. So today, CASB is mainly about <strong>Current Accounts</strong>.</p>
+      </div>
+
+      <div class="sec-heading">Why Does CASB Still Matter?</div>
+      <div class="flow">
+        <div class="flow-step">
+          <div class="step-dot">1</div>
+          <div class="step-body">
+            <strong>Massive Historical Data</strong>
+            <span>Contains account records stretching back decades. Irreplaceable for regulatory and audit needs.</span>
+          </div>
+        </div>
+        <div class="flow-step">
+          <div class="step-dot">2</div>
+          <div class="step-body">
+            <strong>Many Active Accounts</strong>
+            <span>Thousands of business and individual current accounts are still managed through CASB.</span>
+          </div>
+        </div>
+        <div class="flow-step">
+          <div class="step-dot">3</div>
+          <div class="step-body">
+            <strong>Downstream Dependencies</strong>
+            <span>Reporting platforms, analytics tools, and compliance systems all depend on CASB data.</span>
+          </div>
+        </div>
+        <div class="flow-step">
+          <div class="step-dot">4</div>
+          <div class="step-body">
+            <strong>Source of Truth</strong>
+            <span>For current accounts, CASB is still the official source. Other systems get their data from here.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="ch-footer">
+        <button class="btn btn-ghost" onclick="goChapter(0)">← Back</button>
+        <button class="btn btn-primary" onclick="goChapter(2)">Next: Account Types →</button>
+      </div>
+    </div><!-- /ch-1 -->
+
+
+    <!-- ── CH 2: ACCOUNT TYPES ── -->
+    <div class="chapter" id="ch-2">
+      <div class="ch-eyebrow">Chapter 2</div>
+      <h2 class="ch-title">Types of Accounts in CASB</h2>
+      <p class="ch-lead">CASB doesn't just hold one kind of account. Click each type below to learn what it's for.</p>
+
+      <div class="expand-card open" onclick="toggleExpand(this)">
+        <div class="expand-header">
+          <span>💼 Current Accounts (CA)</span>
+          <span class="arrow">▼</span>
+        </div>
+        <div class="expand-body">
+          The most common account type in CASB today. Used by both individuals and businesses for:<br><br>
+          ✅ Daily deposits and withdrawals<br>
+          ✅ Business transactions<br>
+          ✅ Overdraft facilities (spending more than what's in the account)<br><br>
+          These are <strong>not interest-bearing</strong> — they're purely transactional.
+        </div>
+      </div>
+
+      <div class="expand-card" onclick="toggleExpand(this)">
+        <div class="expand-header">
+          <span>💰 Savings Accounts (SB) — Legacy</span>
+          <span class="arrow">▼</span>
+        </div>
+        <div class="expand-body">
+          These were personal accounts that earned interest. The bank no longer offers them, so you won't see new ones.<br><br>
+          However, old historical savings account data <strong>still lives in CASB</strong>, which is why the "SB" in the name remains.
+        </div>
+      </div>
+
+      <div class="expand-card" onclick="toggleExpand(this)">
+        <div class="expand-header">
+          <span>🏢 Entity Accounts</span>
+          <span class="arrow">▼</span>
+        </div>
+        <div class="expand-body">
+          Accounts held by businesses, corporations, or other organisations (not individuals).<br><br>
+          Examples: company operating accounts, trust accounts, government accounts.
+        </div>
+      </div>
+
+      <div class="expand-card" onclick="toggleExpand(this)">
+        <div class="expand-header">
+          <span>👔 Staff Accounts</span>
+          <span class="arrow">▼</span>
+        </div>
+        <div class="expand-body">
+          Accounts held by bank employees. They may have special terms like fee waivers or preferential rates.<br><br>
+          CASB tracks these with a special staff flag so they can be treated differently in reporting.
+        </div>
+      </div>
+
+      <div class="expand-card" onclick="toggleExpand(this)">
+        <div class="expand-header">
+          <span>🏛️ Office / Operational Accounts</span>
+          <span class="arrow">▼</span>
+        </div>
+        <div class="expand-body">
+          Internal accounts used by the bank itself — for example, fee collection accounts, error correction suspense accounts, or nostro accounts.<br><br>
+          These are admin/housekeeping accounts, not customer-facing.
+        </div>
+      </div>
+
+      <div class="expand-card" onclick="toggleExpand(this)">
+        <div class="expand-header">
+          <span>🔗 Loan-related / Overdraft Accounts</span>
+          <span class="arrow">▼</span>
+        </div>
+        <div class="expand-body">
+          CASB also stores information for overdraft-linked loan accounts. If a customer goes into overdraft, CASB can hold the linked credit limit and balance information.
+        </div>
+      </div>
+
+      <div class="info-box green">
+        <div class="ib-title">✅ Key Takeaway</div>
+        <p>CASB holds many account types — but the most important one today is the <strong>Current Account</strong>. When you query CASB data, most records you'll see will be CAs.</p>
+      </div>
+
+      <div class="ch-footer">
+        <button class="btn btn-ghost" onclick="goChapter(1)">← Back</button>
+        <button class="btn btn-primary" onclick="goChapter(3)">Next: Old vs New Products →</button>
+      </div>
+    </div><!-- /ch-2 -->
+
+
+    <!-- ── CH 3: OLD VS NEW PRODUCTS ── -->
+    <div class="chapter" id="ch-3">
+      <div class="ch-eyebrow">Chapter 3</div>
+      <h2 class="ch-title">Old vs New: Product Setup</h2>
+      <p class="ch-lead">How a bank "defines" a product has changed completely. Let's walk through the old way, the new way, and why both still exist.</p>
+
+      <div class="sec-heading">The Old Way — Genasi &amp; GDW</div>
+      <p>Every banking product (like "Business Current Account - Corporate") had to be <em>defined</em> somewhere — what features it has, what rules apply. The old tool for this was called <strong>Genasi Rules</strong>.</p>
+
+      <table class="nice-table">
+        <thead><tr><th>Tool</th><th>What It Did</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Genasi Rules</strong></td><td>Old rule-based product configuration in GDW</td><td>🔴 Being replaced</td></tr>
+          <tr><td><strong>DDM</strong> (Difference Data Manager)</td><td>Managed metadata and registered product definitions</td><td>🔴 Replaced by DRM</td></tr>
+          <tr><td><strong>DRM</strong> (Data Reference Manager)</td><td>Modern central metadata store for product reference data</td><td>🟢 Active</td></tr>
+          <tr><td><strong>GDW</strong> (Global Data Warehouse)</td><td>Central enterprise data store; receives cleaned CASB data</td><td>🟢 Active</td></tr>
+        </tbody>
+      </table>
+
+      <div class="sec-heading">Variable (V) vs Fixed (F) Components</div>
+      <p>CASB describes every product using <strong>components</strong>. Each component is either:</p>
+
+      <div class="card-grid">
+        <div class="card">
+          <div class="card-icon">🔀</div>
+          <div class="card-title">Variable (V)</div>
+          <p>Can change per customer or over time. Examples: variable interest rate, changing overdraft limit, dynamic fees.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🔒</div>
+          <div class="card-title">Fixed (F)</div>
+          <p>Always the same for all customers on this product. Examples: fixed service fee, fixed account type, fixed interest rate.</p>
+        </div>
+      </div>
+
+      <div class="sec-heading">The New Way — NAP Product Master</div>
+
+      <div class="info-box blue">
+        <div class="ib-title">🆕 What is NAP Product Master?</div>
+        <p>It's the bank's <strong>modern central product catalog</strong> — a single master list of all products.<br><br>
+        Every product gets a unique <strong>PCID (Product Catalog ID)</strong>. This PCID is then used across all modern platforms and digital apps to refer to that product consistently.</p>
+      </div>
+
+      <p>Think of PCID like a product's <strong>serial number</strong>. Instead of different systems knowing the same product by different names, every system now uses the same PCID.</p>
+
+      <div class="info-box red">
+        <div class="ib-title">⚠️ The Problem</div>
+        <p>CASB is a mainframe system. It can't connect to NAP directly — it has no APIs, no real-time connections. So how do old CASB products get a modern PCID?</p>
+      </div>
+
+      <div class="ch-footer">
+        <button class="btn btn-ghost" onclick="goChapter(2)">← Back</button>
+        <button class="btn btn-primary" onclick="goChapter(4)">Next: The BRE Bridge →</button>
+      </div>
+    </div><!-- /ch-3 -->
+
+
+    <!-- ── CH 4: BRE ── -->
+    <div class="chapter" id="ch-4">
+      <div class="ch-eyebrow">Chapter 4</div>
+      <h2 class="ch-title">The BRE Bridge 🌉</h2>
+      <p class="ch-lead">CASB is too old to talk to the new product system. So a smart "translator" was built between them.</p>
+
+      <div class="info-box blue">
+        <div class="ib-title">🔧 BRE = Product Master Business Rule Engine</div>
+        <p>BRE is an application that acts as a <strong>translation layer</strong>. It takes old CASB product data and maps it to the modern PCID system.</p>
+      </div>
+
+      <div class="flow">
+        <div class="flow-step">
+          <div class="step-dot">1</div>
+          <div class="step-body">
+            <strong>CASB sends NDH files (old product files)</strong>
+            <span>These are legacy flat files containing product codes in old format that CASB understands.</span>
+          </div>
+        </div>
+        <div class="flow-step">
+          <div class="step-dot">2</div>
+          <div class="step-body">
+            <strong>BRE receives the NDH files</strong>
+            <span>The Business Rule Engine reads the old product codes and applies its mapping rules.</span>
+          </div>
+        </div>
+        <div class="flow-step">
+          <div class="step-dot">3</div>
+          <div class="step-body">
+            <strong>BRE matches each product to its PCID</strong>
+            <span>Like a translator, BRE knows that "CASB product code XYZ" = "PCID 45678" in the modern catalog.</span>
+          </div>
+        </div>
+        <div class="flow-step">
+          <div class="step-dot">4</div>
+          <div class="step-body">
+            <strong>Output: Standardised product mappings</strong>
+            <span>Now every old CASB product has a modern PCID it can use in downstream systems.</span>
+          </div>
+        </div>
+        <div class="flow-step">
+          <div class="step-dot">5</div>
+          <div class="step-body">
+            <strong>ADA stores BOTH mappings</strong>
+            <span>The old Genasi-based mapping AND the new PCID-based mapping are kept side by side in ADA.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="info-box gold">
+        <div class="ib-title">💡 Why Two Mappings?</div>
+        <p>Because some systems still use the old Genasi-based product codes, and some use the new PCID. ADA keeps both so every downstream consumer can get what they need.<br><br>
+        For a single account, you may see <strong>two product relationships</strong> — that's normal and expected!</p>
+      </div>
+
+      <div class="sec-heading">Which mapping to use?</div>
+      <p>It depends on your business use case. Ask yourself:</p>
+      <ul>
+        <li>Am I building a <strong>new application or report</strong>? → Use the <span class="highlight">🆕 PCID mapping</span></li>
+        <li>Am I working with <strong>old GDW-based logic or legacy reports</strong>? → Use the <span class="highlight">📜 Genasi mapping</span></li>
+      </ul>
+
+      <div class="ch-footer">
+        <button class="btn btn-ghost" onclick="goChapter(3)">← Back</button>
+        <button class="btn btn-primary" onclick="goChapter(5)">Next: Data Pipeline →</button>
+      </div>
+    </div><!-- /ch-4 -->
+
+
+    <!-- ── CH 5: DATA PIPELINE ── -->
+    <div class="chapter" id="ch-5">
+      <div class="ch-eyebrow">Chapter 5</div>
+      <h2 class="ch-title">The Data Pipeline ⚡</h2>
+      <p class="ch-lead">Data from CASB doesn't magically appear in reports. It travels through several layers before it's ready to use. Here's the full journey.</p>
+
+      <div class="pipeline">
+        <div class="pipe-box source" onclick="showPipeInfo(this, 'CASB (Mainframe)', 'The origin. Every night at midnight, CASB generates flat files containing account updates, transactions, closures, interest rates, and tax info.')">
+          <div class="pipe-icon">🖥️</div>
+          <div class="pipe-name">CASB</div>
+          <div class="pipe-sub">Source System</div>
+        </div>
+        <div class="pipe-arrow">→</div>
+        <div class="pipe-box source" onclick="showPipeInfo(this, 'GDW (Global Data Warehouse)', 'The bank\'s central data warehouse. It receives CASB files, cleans them, and applies the IBM Financial Services data model. Processing runs from midnight to ~2PM daily.')">
+          <div class="pipe-icon">🏛️</div>
+          <div class="pipe-name">GDW</div>
+          <div class="pipe-sub">Enterprise DW</div>
+        </div>
+        <div class="pipe-arrow">→</div>
+        <div class="pipe-box bronze" onclick="showPipeInfo(this, 'ADA Bronze Layer', 'Raw ingestion zone. CASB files land here exactly as received — 5 tables: Master file, Closed accounts, Interest rates, Transactions, Withholding tax. No transformation yet.')">
+          <div class="pipe-icon">🥉</div>
+          <div class="pipe-name">Bronze</div>
+          <div class="pipe-sub">Raw Data</div>
+        </div>
+        <div class="pipe-arrow">→</div>
+        <div class="pipe-box silver" onclick="showPipeInfo(this, 'ADA Silver Layer', 'Conformed, cleaned data. Uses the IBM Financial Services model (same as GDW). Includes arrangements, products, interests, fees, customers, limits, tax, and history (SCD2). GDW data goes DIRECTLY here (skips Bronze).')">
+          <div class="pipe-icon">🥈</div>
+          <div class="pipe-name">Silver</div>
+          <div class="pipe-sub">Conformed</div>
+        </div>
+        <div class="pipe-arrow">→</div>
+        <div class="pipe-box gold" onclick="showPipeInfo(this, 'ADA Gold Layer (Future)', 'Business-ready data with value-add logic. Some tables from GDW value-add processing currently live in Silver but will eventually move here. Gold = what analysts and apps consume.')">
+          <div class="pipe-icon">🥇</div>
+          <div class="pipe-name">Gold</div>
+          <div class="pipe-sub">Business Ready</div>
+        </div>
+      </div>
+
+      <div class="info-box blue" id="pipeInfoBox" style="display:none">
+        <div class="ib-title" id="pipeInfoTitle"></div>
+        <p id="pipeInfoText"></p>
+      </div>
+      <p style="font-size:13px;color:var(--muted);margin-top:-8px">👆 Click any layer above to learn more about it.</p>
+
+      <div class="sec-heading">Daily Timing (T+1 Batch)</div>
+      <table class="nice-table">
+        <thead><tr><th>Time</th><th>What Happens</th></tr></thead>
+        <tbody>
+          <tr><td>🌙 Midnight</td><td>CASB generates daily batch files</td></tr>
+          <tr><td>🌅 Morning</td><td>GDW runs base loads (processes until ~9–10 AM)</td></tr>
+          <tr><td>🌞 2 PM</td><td>GDW completes value-add processing</td></tr>
+          <tr><td>🕓 4 PM</td><td>ADA triggers its load from GDW</td></tr>
+          <tr><td>🌆 ~6 PM</td><td>ADA Silver load complete — data ready for use!</td></tr>
+        </tbody>
+      </table>
+
+      <div class="info-box gold">
+        <div class="ib-title">💡 Why Does GDW Skip Bronze?</div>
+        <p>GDW data is <em>already</em> cleaned and structured using the IBM model. Loading it into Bronze (raw layer) would be pointless. So ADA ingests GDW data <strong>directly into Silver</strong>.</p>
+      </div>
+
+      <div class="sec-heading">Bronze: The 5 CASB Files</div>
+      <div class="card-grid">
+        <div class="card"><div class="card-icon">📋</div><div class="card-title">Master File</div><p>Full account details — balance, status, product info, customer links.</p></div>
+        <div class="card"><div class="card-icon">🚫</div><div class="card-title">Closed Accounts</div><p>Accounts closed that day — important for historical tracking.</p></div>
+        <div class="card"><div class="card-icon">📈</div><div class="card-title">Interest Rate File</div><p>Current interest rates applied to accounts.</p></div>
+        <div class="card"><div class="card-icon">💳</div><div class="card-title">Transaction File</div><p>All debits and credits for the day.</p></div>
+        <div class="card"><div class="card-icon">🧾</div><div class="card-title">Withholding Tax</div><p>Tax deduction records applied to interest-bearing balances.</p></div>
+      </div>
+
+      <div class="ch-footer">
+        <button class="btn btn-ghost" onclick="goChapter(4)">← Back</button>
+        <button class="btn btn-primary" onclick="goChapter(6)">Next: Working with ADA →</button>
+      </div>
+    </div><!-- /ch-5 -->
+
+
+    <!-- ── CH 6: WORKING WITH ADA ── -->
+    <div class="chapter" id="ch-6">
+      <div class="ch-eyebrow">Chapter 6</div>
+      <h2 class="ch-title">Working with ADA 🛠️</h2>
+      <p class="ch-lead">ADA is where you actually query CASB data. Here are the golden rules and handy tips every analyst needs to know.</p>
+
+      <div class="sec-heading">How to Find CASB Metadata</div>
+      <div class="info-box green">
+        <div class="ib-title">📍 Navigation Path</div>
+        <p><strong>go/ADA → Kangaroo Dashboard → BA0176</strong><br>
+        BA0176 is CASB's application ID in ADA. Start here to explore its metadata, table inventory, and data dictionary.</p>
+      </div>
+
+      <div class="sec-heading">Silver Layer Tables in ADA</div>
+      <p>CASB Silver includes these subject areas (via <code>go/silverbysubject</code>):</p>
+
+      <div class="tag-row">
+        <span class="tag blue">Arrangements</span>
+        <span class="tag blue">Organisation Units</span>
+        <span class="tag blue">Products</span>
+        <span class="tag green">Interest Components</span>
+        <span class="tag green">Limit Tables</span>
+        <span class="tag green">Fee Overrides</span>
+        <span class="tag gold">Customer-AR Relationships</span>
+        <span class="tag gold">Tax Tables</span>
+        <span class="tag">AR Relationship Tables</span>
+        <span class="tag">Payments</span>
+      </div>
+
+      <div class="sec-heading">🔑 Golden Rule: Always Join AR Translation</div>
+      <div class="info-box red">
+        <div class="ib-title">⚠️ Critical Query Tip</div>
+        <p>ADA combines data from <em>many</em> source systems — not just CASB. So if you query the arrangements table without filtering, you'll get data from all sources.<br><br>
+        <strong>Always join your arrangement queries with the AR Translation table</strong> to filter only CASB data. This is the most common mistake new analysts make.</p>
+      </div>
+
+      <div class="sec-heading">SCD Tables — History Tracking</div>
+      <table class="nice-table">
+        <thead><tr><th>Type</th><th>Meaning</th><th>Use Case</th></tr></thead>
+        <tbody>
+          <tr><td><strong>SCD0</strong></td><td>Static — no history kept</td><td>Reference data that never changes</td></tr>
+          <tr><td><strong>SCD2</strong></td><td>Historical — full version history</td><td>Track changes over time (e.g. balance history)</td></tr>
+        </tbody>
+      </table>
+      <p style="font-size:13.5px;color:var(--muted)">Example: The AI Measurement Spot table uses SCD2 to store a daily snapshot of account balances — so you can see what the balance was on any given date.</p>
+
+      <div class="sec-heading">Placeholder Logic</div>
+      <div class="info-box blue">
+        <div class="ib-title">🔄 What is a Placeholder?</div>
+        <p>Sometimes when CASB data arrives, reference data (like an Organisation Unit) isn't available yet. Instead of failing, ADA creates a <strong>placeholder record</strong>.<br><br>
+        It generates a unique ID using <strong>MD5 hashing</strong> of: Institution code + Source system code + Account number.<br><br>
+        When the correct data flows in from DRM later, it fills in the placeholder. No data loss!</p>
+      </div>
+
+      <div class="sec-heading">Confidential Account Numbers</div>
+      <div class="info-box gold">
+        <div class="ib-title">🔒 Masked by Default</div>
+        <p>When you query ADA, account numbers are <strong>masked</strong> by default. To see the full account number, you need <strong>confidential data access</strong> permissions.<br><br>
+        To filter by account, use the <strong>AR Local ID</strong> field — it's available without confidential access.</p>
+      </div>
+
+      <div class="sec-heading">Getting BSB / Branch Details</div>
+      <p>Need the BSB or branch info for an account? Follow this join path:</p>
+      <div class="flow">
+        <div class="flow-step">
+          <div class="step-dot">1</div>
+          <div class="step-body">
+            <strong>Arrangement (AR)</strong>
+            <span>Your starting point — the account record.</span>
+          </div>
+        </div>
+        <div class="flow-step">
+          <div class="step-dot">2</div>
+          <div class="step-body">
+            <strong>AR-IP-ORG Relationship</strong>
+            <span>Links the arrangement to its organisation unit.</span>
+          </div>
+        </div>
+        <div class="flow-step">
+          <div class="step-dot">3</div>
+          <div class="step-body">
+            <strong>IP_ORG + BSB Table</strong>
+            <span>Join here to get the branch name, BSB number, and location details.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="sec-heading">Unity Catalog Structure</div>
+      <div class="info-box green">
+        <div class="ib-title">📂 New ADA Structure: ADA_SILVER_V</div>
+        <p>ADA now uses Unity Catalog. CASB product data is accessed by joining:<br>
+        <strong>Prod Translate</strong> + <strong>Product Description (PD)</strong><br>
+        This gives you the human-readable product name, category, and full metadata.</p>
+      </div>
+
+      <div class="ch-footer">
+        <button class="btn btn-ghost" onclick="goChapter(5)">← Back</button>
+        <button class="btn btn-primary" onclick="goChapter(7)">Final: Take the Quiz →</button>
+      </div>
+    </div><!-- /ch-6 -->
+
+
+    <!-- ── CH 7: QUIZ ── -->
+    <div class="chapter" id="ch-7">
+      <div class="ch-eyebrow">Chapter 7 · Final</div>
+      <h2 class="ch-title">Quick Quiz 🎯</h2>
+      <p class="ch-lead">20 questions covering everything you've learned — 10 knowledge checks and 10 real-world scenarios. Click an answer to check it instantly.</p>
+
+      <div class="quiz-wrap" id="quizWrap">
+
+        <div class="quiz-q" id="q1" data-answered="no">
+          <div class="q-text">1. What does CASB stand for?</div>
+          <div class="options">
+            <div class="option" onclick="answer(this,'q1',false)">Core Account &amp; Savings Bureau</div>
+            <div class="option" onclick="answer(this,'q1',true)">Current Account &amp; Savings Bank</div>
+            <div class="option" onclick="answer(this,'q1',false)">Central Automated Settlement Bank</div>
+            <div class="option" onclick="answer(this,'q1',false)">Customer Account System Base</div>
+          </div>
+          <div class="quiz-feedback" id="fb-q1"></div>
+        </div>
+
+        <div class="quiz-q" id="q2" data-answered="no">
+          <div class="q-text">2. Why is CASB called a "legacy" system?</div>
+          <div class="options">
+            <div class="option" onclick="answer(this,'q2',false)">It was built in 2020</div>
+            <div class="option" onclick="answer(this,'q2',false)">It uses modern cloud APIs</div>
+            <div class="option" onclick="answer(this,'q2',true)">It is an old mainframe-based, batch-processing, file-based system</div>
+            <div class="option" onclick="answer(this,'q2',false)">It processes data in real time</div>
+          </div>
+          <div class="quiz-feedback" id="fb-q2"></div>
+        </div>
+
+        <div class="quiz-q" id="q3" data-answered="no">
+          <div class="q-text">3. What does "T+1" mean in CASB's data delivery?</div>
+          <div class="options">
+            <div class="option" onclick="answer(this,'q3',false)">Data is available instantly</div>
+            <div class="option" onclick="answer(this,'q3',true)">Yesterday's data arrives today — one day delay</div>
+            <div class="option" onclick="answer(this,'q3',false)">Data takes a week to arrive</div>
+            <div class="option" onclick="answer(this,'q3',false)">T+1 refers to a tax code</div>
+          </div>
+          <div class="quiz-feedback" id="fb-q3"></div>
+        </div>
+
+        <div class="quiz-q" id="q4" data-answered="no">
+          <div class="q-text">4. What is a PCID?</div>
+          <div class="options">
+            <div class="option" onclick="answer(this,'q4',false)">A product category in GDW</div>
+            <div class="option" onclick="answer(this,'q4',false)">A type of bank account</div>
+            <div class="option" onclick="answer(this,'q4',true)">A unique Product Catalog ID used in the modern NAP Product Master</div>
+            <div class="option" onclick="answer(this,'q4',false)">A payment clearing ID</div>
+          </div>
+          <div class="quiz-feedback" id="fb-q4"></div>
+        </div>
+
+        <div class="quiz-q" id="q5" data-answered="no">
+          <div class="q-text">5. What does BRE do?</div>
+          <div class="options">
+            <div class="option" onclick="answer(this,'q5',false)">It stores raw CASB files in Bronze</div>
+            <div class="option" onclick="answer(this,'q5',true)">It translates old CASB product codes into modern PCIDs</div>
+            <div class="option" onclick="answer(this,'q5',false)">It replaces GDW entirely</div>
+            <div class="option" onclick="answer(this,'q5',false)">It manages customer identity data</div>
+          </div>
+          <div class="quiz-feedback" id="fb-q5"></div>
+        </div>
+
+        <div class="quiz-q" id="q6" data-answered="no">
+          <div class="q-text">6. How many main files does CASB send to ADA Bronze each day?</div>
+          <div class="options">
+            <div class="option" onclick="answer(this,'q6',false)">3</div>
+            <div class="option" onclick="answer(this,'q6',true)">5</div>
+            <div class="option" onclick="answer(this,'q6',false)">7</div>
+            <div class="option" onclick="answer(this,'q6',false)">10</div>
+          </div>
+          <div class="quiz-feedback" id="fb-q6"></div>
+        </div>
+
+        <div class="quiz-q" id="q7" data-answered="no">
+          <div class="q-text">7. Why does GDW data go directly to Silver — skipping Bronze?</div>
+          <div class="options">
+            <div class="option" onclick="answer(this,'q7',false)">Bronze is full</div>
+            <div class="option" onclick="answer(this,'q7',true)">GDW data is already cleaned and structured, so there's no need for a raw ingestion step</div>
+            <div class="option" onclick="answer(this,'q7',false)">Bronze doesn't exist for CASB</div>
+            <div class="option" onclick="answer(this,'q7',false)">It is cheaper to load directly into Silver</div>
+          </div>
+          <div class="quiz-feedback" id="fb-q7"></div>
+        </div>
+
+        <div class="quiz-q" id="q8" data-answered="no">
+          <div class="q-text">8. What must you always join when querying CASB arrangements in ADA?</div>
+          <div class="options">
+            <div class="option" onclick="answer(this,'q8',false)">The BSB table</div>
+            <div class="option" onclick="answer(this,'q8',false)">The BRE mapping table</div>
+            <div class="option" onclick="answer(this,'q8',true)">The AR Translation table</div>
+            <div class="option" onclick="answer(this,'q8',false)">The Product Description table</div>
+          </div>
+          <div class="quiz-feedback" id="fb-q8"></div>
+        </div>
+
+        <div class="quiz-q" id="q9" data-answered="no">
+          <div class="q-text">9. An SCD2 table in Silver is used for what purpose?</div>
+          <div class="options">
+            <div class="option" onclick="answer(this,'q9',false)">It stores only the latest record, overwriting history</div>
+            <div class="option" onclick="answer(this,'q9',true)">It tracks the full version history of a record over time</div>
+            <div class="option" onclick="answer(this,'q9',false)">It is for static reference data that never changes</div>
+            <div class="option" onclick="answer(this,'q9',false)">It stores product catalog definitions only</div>
+          </div>
+          <div class="quiz-feedback" id="fb-q9"></div>
+        </div>
+
+        <div class="quiz-q" id="q10" data-answered="no">
+          <div class="q-text">10. When ADA receives CASB data but some reference data (like an Org Unit) is missing, what does it do?</div>
+          <div class="options">
+            <div class="option" onclick="answer(this,'q10',false)">It rejects the entire record</div>
+            <div class="option" onclick="answer(this,'q10',false)">It waits until the reference data arrives before loading</div>
+            <div class="option" onclick="answer(this,'q10',true)">It creates a placeholder record using MD5 hashing and fills it in later</div>
+            <div class="option" onclick="answer(this,'q10',false)">It sends an alert to the CASB team</div>
+          </div>
+          <div class="quiz-feedback" id="fb-q10"></div>
+        </div>
+
+        <!-- ── SCENARIO DIVIDER ── -->
+        <div style="margin:32px 0 20px;padding:18px 24px;background:linear-gradient(135deg,#0d1b2a,#1a3a5c);border-radius:14px;display:flex;align-items:center;gap:14px">
+          <span style="font-size:28px">🧩</span>
+          <div>
+            <div style="font-family:'Syne',sans-serif;font-size:16px;font-weight:800;color:#00e5ff">Scenario-Based Questions</div>
+            <div style="font-size:13px;color:rgba(255,255,255,.55);margin-top:3px">Real-world situations — pick the best action an analyst would take.</div>
+          </div>
+        </div>
+
+        <div class="quiz-q" id="q11" data-answered="no">
+          <div class="q-text">11. 🕵️ You query the ADA arrangements table and get 500,000 rows — far more than expected for CASB. What most likely went wrong?</div>
+          <div class="options">
+            <div class="option" onclick="answer(this,'q11',false)">The Silver layer loaded duplicate data from Bronze</div>
+            <div class="option" onclick="answer(this,'q11',true)">You forgot to join the AR Translation table, so you're seeing data from all source systems, not just CASB</div>
+            <div class="option" onclick="answer(this,'q11',false)">CASB sent extra files that day</div>
+            <div class="option" onclick="answer(this,'q11',false)">The GDW batch job ran twice</div>
+          </div>
+          <div class="quiz-feedback" id="fb-q11"></div>
+        </div>
+
+        <div class="quiz-q" id="q12" data-answered="no">
+          <div class="q-text">12. 📅 An analyst needs the account balance for a corporate customer as it stood on 31 December last year — not today's balance. Which table type should they use?</div>
+          <div class="options">
+            <div class="option" onclick="answer(this,'q12',false)">SCD0 — it stores static snapshots</div>
+            <div class="option" onclick="answer(this,'q12',false)">The Bronze master file for that date</div>
+            <div class="option" onclick="answer(this,'q12',true)">An SCD2 table in Silver — it keeps full version history so you can point-in-time query any past date</div>
+            <div class="option" onclick="answer(this,'q12',false)">The GDW value-add table in Gold</div>
+          </div>
+          <div class="quiz-feedback" id="fb-q12"></div>
+        </div>
+
+        <div class="quiz-q" id="q13" data-answered="no">
+          <div class="q-text">13. 🏢 A new corporate client opened a current account today. A downstream report needs this account's data. When is the earliest the data will be ready in ADA Silver?</div>
+          <div class="options">
+            <div class="option" onclick="answer(this,'q13',false)">Instantly — CASB pushes data in real time</div>
+            <div class="option" onclick="answer(this,'q13',false)">By 9 AM the same morning</div>
+            <div class="option" onclick="answer(this,'q13',true)">Around 6 PM the next day — CASB is T+1, data flows through GDW then ADA</div>
+            <div class="option" onclick="answer(this,'q13',false)">After 3 business days</div>
+          </div>
+          <div class="quiz-feedback" id="fb-q13"></div>
+        </div>
+
+        <div class="quiz-q" id="q14" data-answered="no">
+          <div class="q-text">14. 🔍 You're building a new digital app and need to identify a bank product. Should you use the old Genasi-based product code or the PCID?</div>
+          <div class="options">
+            <div class="option" onclick="answer(this,'q14',false)">Genasi code — it's been around longer and is more stable</div>
+            <div class="option" onclick="answer(this,'q14',true)">PCID — it's the modern standard from NAP Product Master, designed for new platforms and digital applications</div>
+            <div class="option" onclick="answer(this,'q14',false)">Either — they are exactly the same thing</div>
+            <div class="option" onclick="answer(this,'q14',false)">Neither — always query the BRE directly</div>
+          </div>
+          <div class="quiz-feedback" id="fb-q14"></div>
+        </div>
+
+        <div class="quiz-q" id="q15" data-answered="no">
+          <div class="q-text">15. 🚨 While loading CASB Silver data, ADA can't find the Organisation Unit for a batch of accounts. What happens next?</div>
+          <div class="options">
+            <div class="option" onclick="answer(this,'q15',false)">ADA raises an error and skips all those accounts</div>
+            <div class="option" onclick="answer(this,'q15',false)">ADA waits indefinitely until the Org Unit arrives</div>
+            <div class="option" onclick="answer(this,'q15',true)">ADA creates placeholder records using MD5 hashing, so the load continues — the correct data arrives from DRM later</div>
+            <div class="option" onclick="answer(this,'q15',false)">ADA copies the Org Unit from a similar account</div>
+          </div>
+          <div class="quiz-feedback" id="fb-q15"></div>
+        </div>
+
+        <div class="quiz-q" id="q16" data-answered="no">
+          <div class="q-text">16. 🔐 A junior analyst wants to search for all transactions on account number "123-456-789" in ADA. They can't find any results. What is the most likely reason?</div>
+          <div class="options">
+            <div class="option" onclick="answer(this,'q16',false)">The account doesn't exist in CASB</div>
+            <div class="option" onclick="answer(this,'q16',true)">Account numbers are masked by default in ADA — they need confidential data access, or should filter using AR Local ID instead</div>
+            <div class="option" onclick="answer(this,'q16',false)">Transaction data only lives in Bronze, not Silver</div>
+            <div class="option" onclick="answer(this,'q16',false)">The account was opened after the T+1 cutoff</div>
+          </div>
+          <div class="quiz-feedback" id="fb-q16"></div>
+        </div>
+
+        <div class="quiz-q" id="q17" data-answered="no">
+          <div class="q-text">17. 📊 A legacy regulatory report uses Genasi-based product codes. A new ADA query returns two product relationships for each CASB account. Which one should the report use?</div>
+          <div class="options">
+            <div class="option" onclick="answer(this,'q17',false)">The PCID-based mapping — it is always more accurate</div>
+            <div class="option" onclick="answer(this,'q17',true)">The Genasi-based mapping — legacy reports should continue to use the old product code system they were built on</div>
+            <div class="option" onclick="answer(this,'q17',false)">Both rows should be summed together</div>
+            <div class="option" onclick="answer(this,'q17',false)">Delete one of the two rows before using</div>
+          </div>
+          <div class="quiz-feedback" id="fb-q17"></div>
+        </div>
+
+        <div class="quiz-q" id="q18" data-answered="no">
+          <div class="q-text">18. 🌐 Your team wants to look up the BSB and branch name for 200 CASB accounts. What is the correct join path?</div>
+          <div class="options">
+            <div class="option" onclick="answer(this,'q18',false)">Query the Bronze master file directly — it contains BSB</div>
+            <div class="option" onclick="answer(this,'q18',false)">Join Arrangement → Product Description → BSB</div>
+            <div class="option" onclick="answer(this,'q18',true)">Join Arrangement → AR-IP-ORG relationship → IP_ORG table → BSB table</div>
+            <div class="option" onclick="answer(this,'q18',false)">BSB data is not available in ADA at all</div>
+          </div>
+          <div class="quiz-feedback" id="fb-q18"></div>
+        </div>
+
+        <div class="quiz-q" id="q19" data-answered="no">
+          <div class="q-text">19. ⚙️ A CASB product has a "Variable" (V) overdraft component. What does this mean in practice for customers?</div>
+          <div class="options">
+            <div class="option" onclick="answer(this,'q19',false)">Every customer gets the exact same overdraft limit</div>
+            <div class="option" onclick="answer(this,'q19',false)">The overdraft feature is turned off for all customers</div>
+            <div class="option" onclick="answer(this,'q19',true)">The overdraft limit can differ per customer and can change over time — it is not locked to a single fixed value</div>
+            <div class="option" onclick="answer(this,'q19',false)">Variable means the overdraft is not yet configured in CASB</div>
+          </div>
+          <div class="quiz-feedback" id="fb-q19"></div>
+        </div>
+
+        <div class="quiz-q" id="q20" data-answered="no">
+          <div class="q-text">20. 🏗️ Your team finds value-add processed tables (VAP) sitting inside ADA Silver. A senior analyst says this is wrong. Why?</div>
+          <div class="options">
+            <div class="option" onclick="answer(this,'q20',false)">Silver should only contain Bronze raw data with no changes</div>
+            <div class="option" onclick="answer(this,'q20',false)">VAP tables belong in Bronze because they come from GDW</div>
+            <div class="option" onclick="answer(this,'q20',true)">Silver should hold conformed/standardised data only — value-add logic belongs in the Gold layer, not Silver</div>
+            <div class="option" onclick="answer(this,'q20',false)">VAP tables are not allowed in ADA at all</div>
+          </div>
+          <div class="quiz-feedback" id="fb-q20"></div>
+        </div>
+
+      </div><!-- /quizWrap -->
+
+      <div class="quiz-score-card" id="scoreCard">
+        <div class="qs-title">🎉 Your Score</div>
+        <div class="qs-score" id="scoreNum">—</div>
+        <div class="qs-label">out of 20</div>
+        <p style="color:rgba(255,255,255,.6);margin-top:16px;font-size:14px" id="scoreMsg"></p>
+        <button class="btn btn-primary" style="margin-top:20px;background:var(--mint);color:var(--navy)" onclick="restartQuiz()">Try Again 🔄</button>
+      </div>
+
+      <div class="ch-footer">
+        <button class="btn btn-ghost" onclick="goChapter(6)">← Back</button>
+        <button class="btn btn-primary" onclick="goChapter(0)">🏠 Back to Start</button>
+      </div>
+    </div><!-- /ch-7 -->
+
+  </div><!-- /content -->
+</div><!-- /main -->
+
+<script>
+  const CHAPTERS = ['Welcome','What is CASB?','Account Types','Old vs New Products','The BRE Bridge','Data Pipeline','Working with ADA','Quick Quiz'];
+  let current = 0;
+  let visited = new Set([0]);
+
+  function goChapter(n) {
+    document.querySelectorAll('.chapter').forEach(c => c.classList.remove('active'));
+    document.getElementById('ch-' + n).classList.add('active');
+
+    document.querySelectorAll('.nav-item').forEach(item => {
+      item.classList.remove('active');
+      if (parseInt(item.dataset.ch) === n) item.classList.add('active');
+    });
+
+    visited.add(n);
+    current = n;
+
+    document.getElementById('topbarTitle').textContent = CHAPTERS[n];
+    document.getElementById('topbarBadge').textContent = n === 0 ? 'Cover' : 'Chapter ' + n + ' of 7';
+
+    // mark visited as done (except current and home)
+    document.querySelectorAll('.nav-item').forEach(item => {
+      const ch = parseInt(item.dataset.ch);
+      if (visited.has(ch) && ch !== n) item.classList.add('done');
+      else item.classList.remove('done');
+    });
+
+    updateProgress();
+    window.scrollTo(0, 0);
+  }
+
+  function updateProgress() {
+    const pct = Math.round(((visited.size - 1) / 7) * 100);
+    document.getElementById('progressBar').style.width = pct + '%';
+    document.getElementById('progressLabel').textContent = pct + '% complete';
+  }
+
+  function toggleExpand(card) {
+    card.classList.toggle('open');
+  }
+
+  function showPipeInfo(box, title, text) {
+    const infoBox = document.getElementById('pipeInfoBox');
+    document.getElementById('pipeInfoTitle').textContent = title;
+    document.getElementById('pipeInfoText').textContent = text;
+    infoBox.style.display = 'block';
+    infoBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+
+  // ── QUIZ ──
+  let quizScore = 0;
+  let quizAnswered = 0;
+
+  function answer(el, qid, correct) {
+    const qEl = document.getElementById(qid);
+    if (qEl.dataset.answered === 'yes') return;
+    qEl.dataset.answered = 'yes';
+    qEl.classList.add('answered');
+
+    const opts = qEl.querySelectorAll('.option');
+    opts.forEach(o => o.classList.add('disabled'));
+
+    const fb = document.getElementById('fb-' + qid);
+    fb.classList.add('show');
+
+    if (correct) {
+      el.classList.add('correct');
+      fb.textContent = '✅ Correct! Great job.';
+      fb.classList.add('ok');
+      quizScore++;
+    } else {
+      el.classList.add('wrong');
+      // highlight the correct one
+      opts.forEach(o => {
+        if (o.getAttribute('onclick') && o.getAttribute('onclick').includes('true')) {
+          o.classList.add('correct');
+        }
+      });
+      fb.textContent = '❌ Not quite — the highlighted answer is correct.';
+      fb.classList.add('no');
+    }
+
+    quizAnswered++;
+    if (quizAnswered === 20) showScore();
+  }
+
+  function showScore() {
+    const card = document.getElementById('scoreCard');
+    card.classList.add('show');
+    document.getElementById('scoreNum').textContent = quizScore + '/20';
+    const msgs = [
+      [0,7,'Keep going! Re-read the chapters and try again 💪'],
+      [8,12,'Good effort! A quick review will get you to 20/20 📖'],
+      [13,17,'Excellent! You really understand CASB 🌟'],
+      [18,19,'Almost perfect! Just a couple more to nail it 🔥'],
+      [20,20,'Perfect score! You\'re a certified CASB expert now 🏆']
+    ];
+    const msg = msgs.find(([lo,hi]) => quizScore >= lo && quizScore <= hi);
+    document.getElementById('scoreMsg').textContent = msg ? msg[2] : '';
+    card.scrollIntoView({ behavior: 'smooth' });
+  }
+
+  function restartQuiz() {
+    quizScore = 0; quizAnswered = 0;
+    document.querySelectorAll('.quiz-q').forEach(q => {
+      q.dataset.answered = 'no';
+      q.classList.remove('answered');
+      q.querySelectorAll('.option').forEach(o => {
+        o.classList.remove('correct','wrong','disabled');
+      });
+      const fb = q.querySelector('.quiz-feedback');
+      fb.classList.remove('show','ok','no');
+      fb.textContent = '';
+    });
+    document.getElementById('scoreCard').classList.remove('show');
+  }
+
+  // init
+  updateProgress();
+</script>
+</body>
+</html>
